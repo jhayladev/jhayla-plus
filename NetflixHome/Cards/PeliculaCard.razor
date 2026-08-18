@@ -1,0 +1,20 @@
+﻿
+<div class="pelicula-card">
+	<img src="@ImagenUrl" alt="@Titulo" />
+	<h3>@Titulo</h3>
+	<p>@Year</p>
+		
+</div>
+
+@code {
+
+
+	[Parameter]
+	public string Titulo { get; set; } 
+
+	[Parameter]
+	public string ImagenUrl { get; set; }
+
+	[Parameter]
+	public int Year { get; set; } 
+}

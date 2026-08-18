@@ -1,0 +1,12 @@
+/* CSS for PeliculaCard component */
+
+.pelicula-card{
+    max-width: 200px;
+    flex-shrink: 0;
+}
+
+.pelicula-card img{
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}

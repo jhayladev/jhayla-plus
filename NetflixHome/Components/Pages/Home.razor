@@ -1,0 +1,20 @@
+﻿@page "/"
+
+
+
+<h1> Peliculas Disponibles</h1>
+<div class="fila-peliculas">
+	@foreach (var peliculas in listPeliculas)
+	{
+		<PeliculaCard Titulo="@peliculas.Titulo" ImagenUrl="@peliculas.ImagenUrl" Year="@peliculas.Year"></PeliculaCard>
+	}
+</div>
+
+@code{
+
+	List<Pelicula> listPeliculas = new List<Pelicula>
+	{
+		new Pelicula {Titulo = "Nuestro hilo rojo a distancia", ImagenUrl = "/images/ojitoscute.png", Year = 2026},
+		new Pelicula {Titulo = "Sandias", ImagenUrl = "/images/cachetona.png", Year = 2026}
+	};
+}

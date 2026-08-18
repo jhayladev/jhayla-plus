@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T1USaMFAPvA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\NetflixHome.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Windows 11\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.11\\microsoft.aspnetcore.app.internal.assets.10.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
