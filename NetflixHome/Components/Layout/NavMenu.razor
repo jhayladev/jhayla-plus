@@ -1,30 +1,23 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">NetflixHome</a>
-    </div>
+﻿<div class="dplus-navbar">
+	<div class="dplus-navbar-izquierda">
+		<a class="dplus-logo" href="">
+			Jhayla<span class="dplus-logo-signo">+</span>
+		</a>
+
+		<input type="checkbox" title="Menú de navegación" class="navbar-toggler" />
+
+		<nav class="dplus-nav-links">
+			<NavLink class="dplus-link" href="" Match="NavLinkMatch.All">Inicio</NavLink>
+			<NavLink class="dplus-link" href="counter">Series</NavLink>
+			<NavLink class="dplus-link" href="weather">Películas</NavLink>
+			<span class="dplus-link dplus-link-estatico">Originales</span>
+			<span class="dplus-link dplus-link-estatico">Mi Lista</span>
+		</nav>
+	</div>
+
+	<div class="dplus-navbar-derecha">
+		<span class="dplus-icono" title="Buscar">	</span>
+		<!-- TODO: aquí se reemplaza este botón por el flujo real de inicio de sesión / avatar del perfil -->
+		<button class="dplus-btn-login" type="button">Iniciar sesión</button>
+	</div>
 </div>
-
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
-

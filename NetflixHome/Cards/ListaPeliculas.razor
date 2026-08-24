@@ -1,0 +1,27 @@
+﻿@using NetflixHome.ClassLogic
+
+<section class="fila-seccion">
+	<h2 class="fila-titulo">@TituloFila</h2>
+	<div class="fila-peliculas">
+		@foreach (var pelicula in Peliculas)
+		{
+			<PeliculaCard Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"></PeliculaCard>
+		}
+	</div>
+</section>
+
+@code {
+
+	[Parameter]
+	public string TituloFila { get; set; } = "Añadido recientemente";
+
+	[Parameter]
+	public List<Pelicula>? Peliculas { get; set; }
+
+	protected override void OnInitialized()
+	{
+		// Si no se especifica una lista puntual, se usa el repositorio central
+		// (misma fuente de datos que usa el banner).
+		Peliculas ??= PeliculasRepository.Todas;
+	}
+}

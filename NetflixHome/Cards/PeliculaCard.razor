@@ -1,20 +1,24 @@
-﻿
-<div class="pelicula-card">
-	<img src="@ImagenUrl" alt="@Titulo" />
-	<h3>@Titulo</h3>
-	<p>@Year</p>
-		
+﻿<div class="pelicula-card">
+	<div class="pelicula-card-img-wrap">
+		<img src="@ImagenUrl" alt="@Titulo" loading="lazy" />
+		<div class="pelicula-card-overlay">
+			<span class="overlay-mas">+</span>
+			<div class="overlay-texto">
+				<h3>@Titulo</h3>
+				<p>@Year</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 @code {
 
-
 	[Parameter]
-	public string Titulo { get; set; } 
+	public string Titulo { get; set; }
 
 	[Parameter]
 	public string ImagenUrl { get; set; }
 
 	[Parameter]
-	public int Year { get; set; } 
+	public int Year { get; set; }
 }

@@ -1,20 +1,15 @@
 ﻿@page "/"
+@using NetflixHome.ClassLogic
 
+<Carrusel />
 
-
-<h1> Peliculas Disponibles</h1>
-<div class="fila-peliculas">
-	@foreach (var peliculas in listPeliculas)
-	{
-		<PeliculaCard Titulo="@peliculas.Titulo" ImagenUrl="@peliculas.ImagenUrl" Year="@peliculas.Year"></PeliculaCard>
-	}
+<div class="filas-home">
+	<ListaPeliculas TituloFila="Añadido recientemente" />
+	<ListaPeliculas TituloFila="Recomendado para ti" Peliculas="@Reordenadas" />
 </div>
 
-@code{
-
-	List<Pelicula> listPeliculas = new List<Pelicula>
-	{
-		new Pelicula {Titulo = "Nuestro hilo rojo a distancia", ImagenUrl = "/images/ojitoscute.png", Year = 2026},
-		new Pelicula {Titulo = "Sandias", ImagenUrl = "/images/cachetona.png", Year = 2026}
-	};
+@code {
+	// Misma fuente de datos (PeliculasRepository), solo se reordena para
+	// mostrar una segunda fila distinta en la home, sin inventar películas nuevas.
+	List<Pelicula> Reordenadas => PeliculasRepository.Todas.AsEnumerable().Reverse().ToList();
 }

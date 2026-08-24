@@ -35,10 +35,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows 11/source/repos/slnNetflixHome/NetflixHome/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Windows 11/source/repos/slnNetflixHome/NetflixHome/Components/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -55,9 +51,17 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Windows 11/source/repos/slnNetflixHome/NetflixHome/Cards/ListaPeliculas.razor]
+build_metadata.AdditionalFiles.TargetPath = Q2FyZHNcTGlzdGFQZWxpY3VsYXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-bh4lg1gu8n
+
 [C:/Users/Windows 11/source/repos/slnNetflixHome/NetflixHome/Cards/PeliculaCard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q2FyZHNcUGVsaWN1bGFDYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-733gyzqola
+
+[C:/Users/Windows 11/source/repos/slnNetflixHome/NetflixHome/CarruselBanner/Carrusel.razor]
+build_metadata.AdditionalFiles.TargetPath = Q2FycnVzZWxCYW5uZXJcQ2FycnVzZWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-cwh9956y7n
 
 [C:/Users/Windows 11/source/repos/slnNetflixHome/NetflixHome/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
@@ -70,3 +74,7 @@ build_metadata.AdditionalFiles.CssScope = b-k3w2rsqd5o
 [C:/Users/Windows 11/source/repos/slnNetflixHome/NetflixHome/Components/Layout/ReconnectModal.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcUmVjb25uZWN0TW9kYWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-0cxeyon9aj
+
+[C:/Users/Windows 11/source/repos/slnNetflixHome/NetflixHome/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xdp5qi4igk

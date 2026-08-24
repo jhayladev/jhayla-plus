@@ -1,0 +1,35 @@
+.fila-seccion[b-bh4lg1gu8n] {
+    margin: 0 0 2.6rem 0;
+    padding: 0 4%;
+}
+
+.fila-titulo[b-bh4lg1gu8n] {
+    color: #fff;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.9rem 0;
+}
+
+.fila-peliculas[b-bh4lg1gu8n] {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: visible;
+    max-width: 100%;
+    padding: 6px 6px 20px 6px;
+}
+
+.fila-peliculas[b-bh4lg1gu8n]::-webkit-scrollbar {
+    height: 6px;
+}
+
+.fila-peliculas[b-bh4lg1gu8n]::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
+
+.fila-peliculas[b-bh4lg1gu8n]::-webkit-scrollbar-track {
+    background: transparent;
+}

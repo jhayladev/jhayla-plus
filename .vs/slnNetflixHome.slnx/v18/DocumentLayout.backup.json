@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\cards\\peliculacard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\cards\\peliculacard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -19,8 +11,40 @@
       "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\cards\\peliculacard.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\carruselbanner\\carrusel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\carruselbanner\\carrusel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\cards\\listapeliculas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\cards\\listapeliculas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\classlogic\\peliculasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\classlogic\\peliculasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\components\\layout\\reconnectmodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\layout\\reconnectmodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\classlogic\\pelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\classlogic\\pelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\slnnetflixhome\\netflixhome\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,25 +54,100 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "NetflixHome\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-08-17T19:13:36.076Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeToolTip": "NetflixHome\\Components\\Layout\\NavMenu.razor.css",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAAHEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-08-21T17:22:29.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListaPeliculas.razor",
+              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Cards\\ListaPeliculas.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Cards\\ListaPeliculas.razor",
+              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Cards\\ListaPeliculas.razor",
+              "RelativeToolTip": "NetflixHome\\Cards\\ListaPeliculas.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-21T17:20:18.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Carrusel.razor",
+              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\CarruselBanner\\Carrusel.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\CarruselBanner\\Carrusel.razor",
+              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\CarruselBanner\\Carrusel.razor",
+              "RelativeToolTip": "NetflixHome\\CarruselBanner\\Carrusel.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-21T17:19:44.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PeliculasRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\ClassLogic\\PeliculasRepository.cs",
+              "RelativeDocumentMoniker": "NetflixHome\\ClassLogic\\PeliculasRepository.cs",
+              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\ClassLogic\\PeliculasRepository.cs",
+              "RelativeToolTip": "NetflixHome\\ClassLogic\\PeliculasRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T17:19:23.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReconnectModal.razor",
+              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Components\\Layout\\ReconnectModal.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Layout\\ReconnectModal.razor",
+              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Components\\Layout\\ReconnectModal.razor",
+              "RelativeToolTip": "NetflixHome\\Components\\Layout\\ReconnectModal.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-21T17:19:07.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "NetflixHome\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-21T17:19:03.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "app.css",
               "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\wwwroot\\app.css",
               "RelativeDocumentMoniker": "NetflixHome\\wwwroot\\app.css",
@@ -56,25 +155,24 @@
               "RelativeToolTip": "NetflixHome\\wwwroot\\app.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-08-17T20:29:35.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-17T20:29:35.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "PeliculaCard.razor",
               "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Cards\\PeliculaCard.razor",
               "RelativeDocumentMoniker": "NetflixHome\\Cards\\PeliculaCard.razor",
               "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Cards\\PeliculaCard.razor",
               "RelativeToolTip": "NetflixHome\\Cards\\PeliculaCard.razor",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAMAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-08-17T18:57:02.487Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "PeliculaCard.razor.css",
               "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\Cards\\PeliculaCard.razor.css",
               "RelativeDocumentMoniker": "NetflixHome\\Cards\\PeliculaCard.razor.css",
@@ -82,12 +180,11 @@
               "RelativeToolTip": "NetflixHome\\Cards\\PeliculaCard.razor.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-08-17T20:27:22.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-17T20:27:22.728Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Pelicula.cs",
               "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\slnNetflixHome\\NetflixHome\\ClassLogic\\Pelicula.cs",
               "RelativeDocumentMoniker": "NetflixHome\\ClassLogic\\Pelicula.cs",
@@ -95,8 +192,7 @@
               "RelativeToolTip": "NetflixHome\\ClassLogic\\Pelicula.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T19:30:06.551Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-17T19:30:06.551Z"
             }
           ]
         }

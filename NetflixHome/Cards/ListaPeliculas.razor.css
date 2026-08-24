@@ -1,0 +1,35 @@
+.fila-seccion {
+    margin: 0 0 2.6rem 0;
+    padding: 0 4%;
+}
+
+.fila-titulo {
+    color: #fff;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.9rem 0;
+}
+
+.fila-peliculas {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: visible;
+    max-width: 100%;
+    padding: 6px 6px 20px 6px;
+}
+
+.fila-peliculas::-webkit-scrollbar {
+    height: 6px;
+}
+
+.fila-peliculas::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
+
+.fila-peliculas::-webkit-scrollbar-track {
+    background: transparent;
+}

@@ -1,4 +1,6 @@
+wwwroot\app.css
 wwwroot\favicon.png
+wwwroot\images\cachetona.png
 wwwroot\images\ojitoscute.png
 wwwroot\images\susto.png
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -45,10 +47,10 @@ wwwroot\lib\bootstrap\dist\js\bootstrap.js
 wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
 wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
-wwwroot\app.css
 Components\Layout\ReconnectModal.razor.js
 C:\Users\Windows 11\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.11\build\..\_framework\blazor.web.js
 C:\Users\Windows 11\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.11\build\..\_framework\blazor.server.js
+C:\Users\Windows 11\source\repos\slnNetflixHome\NetflixHome\wwwroot\app.css
 C:\Users\Windows 11\source\repos\slnNetflixHome\NetflixHome\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\Windows 11\source\repos\slnNetflixHome\NetflixHome\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 C:\Users\Windows 11\source\repos\slnNetflixHome\NetflixHome\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -96,4 +98,3 @@ C:\Users\Windows 11\source\repos\slnNetflixHome\NetflixHome\wwwroot\lib\bootstra
 C:\Users\Windows 11\source\repos\slnNetflixHome\NetflixHome\Components\Layout\ReconnectModal.razor.js
 C:\Users\Windows 11\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.11\_framework\blazor.web.js
 C:\Users\Windows 11\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.11\_framework\blazor.server.js
-C:\Users\Windows 11\source\repos\slnNetflixHome\NetflixHome\wwwroot\app.css
