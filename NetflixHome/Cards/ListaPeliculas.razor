@@ -1,14 +1,25 @@
 ﻿@using NetflixHome.ClassLogic
+@if (Peliculas == null)
+{
+	<p>Cargando peliculas, espere un momento...</p>
+}
+else if (Peliculas.Count == 0)
+{
+	<p>No hay peliculas para mostrar.</p>
+}
+else
+{
+	<section class="fila-seccion">
+		<h2 class="fila-titulo">@TituloFila</h2>
+		<div class="fila-peliculas">
+			@foreach (var pelicula in Peliculas)
+			{
+				<PeliculaCard Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"></PeliculaCard>
+			}
+		</div>
+	</section>
+}
 
-<section class="fila-seccion">
-	<h2 class="fila-titulo">@TituloFila</h2>
-	<div class="fila-peliculas">
-		@foreach (var pelicula in Peliculas)
-		{
-			<PeliculaCard Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"></PeliculaCard>
-		}
-	</div>
-</section>
 
 @code {
 
@@ -16,7 +27,7 @@
 	public string TituloFila { get; set; } = "Añadido recientemente";
 
 	[Parameter]
-	public List<Pelicula>? Peliculas { get; set; }
+	public List<Peliculas>? Peliculas { get; set; }
 
 	protected override void OnInitialized()
 	{
