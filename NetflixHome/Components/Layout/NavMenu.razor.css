@@ -29,7 +29,10 @@
 }
 
 .dplus-logo-signo {
-    color: #1cd2e5;
+    background: linear-gradient(135deg, #1cd2e5 0%, #6c4cf1 55%, #e50914 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .dplus-nav-links {
@@ -41,6 +44,7 @@
 }
 
 .dplus-link {
+    position: relative;
     color: #cfd3dc;
     text-decoration: none;
     font-size: 0.88rem;
@@ -48,6 +52,22 @@
     letter-spacing: 0.3px;
     cursor: pointer;
     transition: color 0.15s ease;
+}
+
+.dplus-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #1cd2e5, #6c4cf1 55%, #e50914);
+    transition: right 0.2s ease;
+}
+
+.dplus-link:hover::after, .dplus-nav-links ::deep a.active::after {
+    right: 0;
 }
 
 .dplus-link-estatico {
@@ -85,11 +105,12 @@
     font-weight: 700;
     cursor: pointer;
     font-family: inherit;
-    transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease, box-shadow 0.15s ease;
 }
 
     .dplus-btn-login:hover {
-        opacity: 0.85;
+        opacity: 0.92;
+        box-shadow: 0 4px 16px rgba(229, 9, 20, 0.35);
         text-decoration: none;
     }
 

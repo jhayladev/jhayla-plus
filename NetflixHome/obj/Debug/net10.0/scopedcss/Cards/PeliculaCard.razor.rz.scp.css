@@ -2,6 +2,7 @@
     max-width: 230px;
     flex-shrink: 0;
     cursor: pointer;
+    position: relative;
 }
 
 .pelicula-card-img-wrap[b-733gyzqola] {
@@ -23,6 +24,75 @@
     display: block;
 }
 
+/* Botón "+": SIEMPRE visible, fijo arriba a la derecha (no depende del hover). */
+.card-mas[b-733gyzqola] {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 4;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.75);
+    background: rgba(19, 23, 39, 0.72);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card-mas:hover[b-733gyzqola] {
+    background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
+    border-color: transparent;
+    transform: scale(1.1);
+}
+
+/* Estado "agregada": queda marcado con el check y color activo,
+   así el clic da una señal visual inmediata y persistente
+   (no depende únicamente del toast, que desaparece en unos segundos). */
+.card-mas--agregada[b-733gyzqola] {
+    background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
+    border-color: transparent;
+    animation: card-mas-pop-b-733gyzqola 0.25s ease;
+}
+
+@keyframes card-mas-pop-b-733gyzqola {
+    0% {
+        transform: scale(0.75);
+    }
+
+    60% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Badge opcional (ej: "Próximamente", "Tendencia") arriba a la izquierda. */
+.card-etiqueta[b-733gyzqola] {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 3;
+    background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
+    color: #04060f;
+    font-size: 0.62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 3px 8px;
+    border-radius: 20px;
+}
+
+/* Overlay con título/año: aparece con hover, igual que antes, pero ya sin el botón adentro. */
 .pelicula-card-overlay[b-733gyzqola] {
     position: absolute;
     inset: 0;
@@ -33,21 +103,7 @@
     background: linear-gradient(180deg, rgba(4,6,15,0) 45%, rgba(4,6,15,0.92) 100%);
     opacity: 0;
     transition: opacity 0.25s ease;
-}
-
-.overlay-mas[b-733gyzqola] {
-    align-self: flex-end;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255,255,255,0.75);
-    background: rgba(19, 23, 39, 0.6);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    margin-bottom: auto;
+    pointer-events: none;
 }
 
 .overlay-texto h3[b-733gyzqola] {
@@ -64,11 +120,17 @@
     margin: 0;
 }
 
-.pelicula-card:hover .pelicula-card-img-wrap[b-733gyzqola] {
-    transform: scale(1.08);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.6);
-    outline: 2px solid #ffffff;
+/* El wrap crece un poco al hacer hover; el .pelicula-card queda igual de ancho
+   (así no empuja a las tarjetas vecinas) y sube el z-index solo mientras
+   está encima, para que se vea por delante sin "montarse" de forma permanente. */
+.pelicula-card:hover[b-733gyzqola] {
     z-index: 5;
+}
+
+.pelicula-card:hover .pelicula-card-img-wrap[b-733gyzqola] {
+    transform: scale(1.06);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.6), 0 0 0 1px rgba(28, 210, 229, 0.25);
+    outline: 2px solid #ffffff;
 }
 
 .pelicula-card:hover .pelicula-card-overlay[b-733gyzqola] {
@@ -80,5 +142,25 @@
         width: 150px;
         max-width: 150px;
         height: 225px;
+    }
+}
+
+/* ===== Variante alterna: usada en "Próximamente" y "Tendencias ahora".
+   Mismo patrón que las de arriba (mismo hover, mismo botón "+"), solo un
+   poco más chicas y con el badge de arriba-izquierda como diferenciador,
+   para que no queden recargadas ni "horribles". ===== */
+.pelicula-card--alt[b-733gyzqola],
+.pelicula-card--alt .pelicula-card-img-wrap[b-733gyzqola] {
+    width: 190px;
+    max-width: 190px;
+    height: 260px;
+}
+
+@media (max-width: 640px) {
+    .pelicula-card--alt[b-733gyzqola],
+    .pelicula-card--alt .pelicula-card-img-wrap[b-733gyzqola] {
+        width: 130px;
+        max-width: 130px;
+        height: 178px;
     }
 }

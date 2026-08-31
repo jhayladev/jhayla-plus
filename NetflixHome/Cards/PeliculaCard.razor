@@ -1,8 +1,23 @@
-﻿<div class="pelicula-card">
+@using NetflixHome.ClassLogic
+@inject ToastService Toast
+
+<div class="pelicula-card @(EstiloAlterno ? "pelicula-card--alt" : "")">
 	<div class="pelicula-card-img-wrap">
-		<img src="@ImagenUrl" alt="@Titulo" loading="lazy" />
+		<img src="@ImagenUrl" alt="@Titulo" loading="lazy"
+			 onerror="this.onerror=null;this.src='/images/susto.png';" />
+
+		@if (!string.IsNullOrWhiteSpace(Etiqueta))
+		{
+			<span class="card-etiqueta">@Etiqueta</span>
+		}
+
+		<button class="card-mas @(agregada ? "card-mas--agregada" : "")" type="button"
+				title="@(agregada ? "Agregada a Mi Lista" : "Añadir a Mi Lista")"
+				@onclick="Agregar" @onclick:stopPropagation="true">
+			@(agregada ? "✓" : "+")
+		</button>
+
 		<div class="pelicula-card-overlay">
-			<span class="overlay-mas">+</span>
 			<div class="overlay-texto">
 				<h3>@Titulo</h3>
 				<p>@Year</p>
@@ -14,11 +29,31 @@
 @code {
 
 	[Parameter]
-	public string Titulo { get; set; }
+	public string? Titulo { get; set; }
 
 	[Parameter]
-	public string ImagenUrl { get; set; }
+	public string? ImagenUrl { get; set; }
 
 	[Parameter]
 	public int Year { get; set; }
+
+	// Cuando es true, se usa el diseño alterno (info siempre visible, sin depender de :hover).
+	[Parameter]
+	public bool EstiloAlterno { get; set; }
+
+	// Texto corto del badge en la esquina (ej: "Próximamente", "Tendencia"). Opcional.
+	[Parameter]
+	public string? Etiqueta { get; set; }
+
+	// Antes solo se llamaba a Toast.Mostrar(): si el toast no llegaba a
+	// dispararse (o pasaba desapercibido) el clic parecía no hacer nada.
+	// Ahora el botón cambia de estado por sí mismo (+ -> ✓), así el cambio
+	// se ve siempre en la propia tarjeta, sin depender de nada más.
+	private bool agregada;
+
+	private void Agregar()
+	{
+		agregada = !agregada;
+		Toast.Mostrar(agregada ? "Agregada a Mi Lista" : "Quitada de Mi Lista");
+	}
 }

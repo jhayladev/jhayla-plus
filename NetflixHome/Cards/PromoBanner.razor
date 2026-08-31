@@ -1,0 +1,69 @@
+@using NetflixHome.ClassLogic
+
+<div class="promo-banner">
+	<div class="promo-texto">
+		<div class="promo-marca">
+			Jhayla<span class="promo-marca-signo">+</span> <span class="promo-premium">Premium</span>
+		</div>
+		<h2>Disfruta tus favoritos en cualquier momento y lugar.</h2>
+		<p>Descarga, mira en varios dispositivos a la vez y accede a estrenos exclusivos con el plan Premium.</p>
+		<button class="promo-btn" type="button" @onclick="Suscribir">Suscribirme ahora</button>
+	</div>
+
+	<div class="promo-dispositivos" aria-hidden="true">
+		<div class="disp disp-monitor">
+			<div class="disp-pantalla">
+				<img src="/images/ojitoscute.png" alt=""
+					 onerror="this.onerror=null;this.src='/images/susto.png';" />
+			</div>
+			<div class="disp-monitor-cuello"></div>
+			<div class="disp-monitor-base"></div>
+		</div>
+
+		<div class="disp disp-laptop">
+			<div class="disp-pantalla">
+				<img src="@ImagenLaptop" alt=""
+					 onerror="this.onerror=null;this.src='/images/susto.png';" />
+			</div>
+			<div class="disp-laptop-base"></div>
+		</div>
+
+		<div class="disp disp-tablet">
+			<div class="disp-pantalla">
+				<img src="@ImagenTablet" alt=""
+					 onerror="this.onerror=null;this.src='/images/susto.png';" />
+			</div>
+		</div>
+
+		<div class="disp disp-phone">
+			<div class="disp-pantalla">
+				<img src="/images/cachetona.png" alt=""
+					 onerror="this.onerror=null;this.src='/images/susto.png';" />
+			</div>
+		</div>
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public EventCallback OnSuscribir { get; set; }
+
+	// Catálogo completo, solo para tomar un par de portadas de muestra
+	// y mostrarlas en la laptop/tablet del mockup.
+	[Parameter]
+	public List<Peliculas>? Peliculas { get; set; }
+
+	private string ImagenLaptop => ObtenerPoster(1) ?? "/images/susto.png";
+	private string ImagenTablet => ObtenerPoster(4) ?? "/images/susto.png";
+
+	private string? ObtenerPoster(int indice)
+		=> Peliculas is { Count: > 0 } ? Peliculas[indice % Peliculas.Count].ImagenUrl : null;
+
+	private async Task Suscribir()
+	{
+		if (OnSuscribir.HasDelegate)
+		{
+			await OnSuscribir.InvokeAsync();
+		}
+	}
+}

@@ -31,4 +31,18 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<PeliculasDbContext>();
+        context.Database.Migrate(); // Aplica InitialCreate y SeedPeliculasData en SQL Server
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error al aplicar migraciones: {ex.Message}");
+    }
+}
+
 app.Run();

@@ -1,3 +1,4 @@
+using NetflixHome.ClassLogic;
 using NetflixHome.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Cliente HTTP hacia JhaylaPlusAPI (la Base URL se toma de appsettings.json -> "ApiBaseUrl").
+var apiBaseUrl = builder.Configuration["ApiBaseUrl"] ?? "http://localhost:50428/";
+builder.Services.AddHttpClient("JhaylaPlusAPI", client =>
+{
+    client.BaseAddress = new Uri(apiBaseUrl);
+});
+
+builder.Services.AddScoped<PeliculasApiClient>();
+builder.Services.AddScoped<ToastService>();
 
 var app = builder.Build();
 

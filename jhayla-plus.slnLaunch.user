@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "JhaylaPlusAPI\\JhaylaPlusAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "NetflixHome\\NetflixHome.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

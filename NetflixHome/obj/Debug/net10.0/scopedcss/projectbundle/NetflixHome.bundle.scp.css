@@ -2,6 +2,7 @@
 .fila-seccion[b-bh4lg1gu8n] {
     margin: 0 0 2.6rem 0;
     padding: 0 4%;
+    position: relative;
 }
 
 .fila-titulo[b-bh4lg1gu8n] {
@@ -12,14 +13,72 @@
     margin: 0 0 0.9rem 0;
 }
 
+.fila-envoltura[b-bh4lg1gu8n] {
+    position: relative;
+}
+
+/* Difuminados a los costados de la fila: por defecto invisibles.
+   El JS (filaScroll.js) les agrega/quita la clase "visible" según la
+   posición del scroll, así solo aparecen cuando de verdad hay más
+   contenido escondido hacia ese lado. */
+.fila-fade-izquierda[b-bh4lg1gu8n],
+.fila-fade-derecha[b-bh4lg1gu8n] {
+    position: absolute;
+    top: 0;
+    bottom: 20px;
+    width: 64px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.fila-fade-izquierda.visible[b-bh4lg1gu8n],
+.fila-fade-derecha.visible[b-bh4lg1gu8n] {
+    opacity: 1;
+}
+
+.fila-fade-derecha[b-bh4lg1gu8n] {
+    right: 0;
+    justify-content: flex-end;
+    padding-right: 6px;
+    background: linear-gradient(90deg, rgba(4,6,15,0) 0%, rgba(4,6,15,0.85) 75%);
+}
+
+.fila-fade-izquierda[b-bh4lg1gu8n] {
+    left: 0;
+    justify-content: flex-start;
+    padding-left: 6px;
+    background: linear-gradient(270deg, rgba(4,6,15,0) 0%, rgba(4,6,15,0.85) 75%);
+}
+
+.fila-flecha[b-bh4lg1gu8n] {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.fila-flecha-izq[b-bh4lg1gu8n] {
+    /* Mismo glifo que la derecha pero espejado, para no depender de
+       que la fuente tenga un carácter "‹" con el mismo grosor que "›". */
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
 .fila-peliculas[b-bh4lg1gu8n] {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    /* Espacio de sobra suficiente para que el "scale" del hover (ver
+       PeliculaCard.razor.css) quepa completo dentro de la fila, así el
+       propio scroll horizontal no lo recorta arriba/abajo. */
+    gap: 28px;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     max-width: 100%;
-    padding: 6px 6px 20px 6px;
+    padding: 24px 10px 32px 10px;
+    scroll-behavior: smooth;
 }
 
 .fila-peliculas[b-bh4lg1gu8n]::-webkit-scrollbar {
@@ -39,6 +98,7 @@
     max-width: 230px;
     flex-shrink: 0;
     cursor: pointer;
+    position: relative;
 }
 
 .pelicula-card-img-wrap[b-733gyzqola] {
@@ -60,6 +120,75 @@
     display: block;
 }
 
+/* Botón "+": SIEMPRE visible, fijo arriba a la derecha (no depende del hover). */
+.card-mas[b-733gyzqola] {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 4;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.75);
+    background: rgba(19, 23, 39, 0.72);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card-mas:hover[b-733gyzqola] {
+    background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
+    border-color: transparent;
+    transform: scale(1.1);
+}
+
+/* Estado "agregada": queda marcado con el check y color activo,
+   así el clic da una señal visual inmediata y persistente
+   (no depende únicamente del toast, que desaparece en unos segundos). */
+.card-mas--agregada[b-733gyzqola] {
+    background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
+    border-color: transparent;
+    animation: card-mas-pop-b-733gyzqola 0.25s ease;
+}
+
+@keyframes card-mas-pop-b-733gyzqola {
+    0% {
+        transform: scale(0.75);
+    }
+
+    60% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Badge opcional (ej: "Próximamente", "Tendencia") arriba a la izquierda. */
+.card-etiqueta[b-733gyzqola] {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 3;
+    background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
+    color: #04060f;
+    font-size: 0.62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 3px 8px;
+    border-radius: 20px;
+}
+
+/* Overlay con título/año: aparece con hover, igual que antes, pero ya sin el botón adentro. */
 .pelicula-card-overlay[b-733gyzqola] {
     position: absolute;
     inset: 0;
@@ -70,21 +199,7 @@
     background: linear-gradient(180deg, rgba(4,6,15,0) 45%, rgba(4,6,15,0.92) 100%);
     opacity: 0;
     transition: opacity 0.25s ease;
-}
-
-.overlay-mas[b-733gyzqola] {
-    align-self: flex-end;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255,255,255,0.75);
-    background: rgba(19, 23, 39, 0.6);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    margin-bottom: auto;
+    pointer-events: none;
 }
 
 .overlay-texto h3[b-733gyzqola] {
@@ -101,11 +216,17 @@
     margin: 0;
 }
 
-.pelicula-card:hover .pelicula-card-img-wrap[b-733gyzqola] {
-    transform: scale(1.08);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.6);
-    outline: 2px solid #ffffff;
+/* El wrap crece un poco al hacer hover; el .pelicula-card queda igual de ancho
+   (así no empuja a las tarjetas vecinas) y sube el z-index solo mientras
+   está encima, para que se vea por delante sin "montarse" de forma permanente. */
+.pelicula-card:hover[b-733gyzqola] {
     z-index: 5;
+}
+
+.pelicula-card:hover .pelicula-card-img-wrap[b-733gyzqola] {
+    transform: scale(1.06);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.6), 0 0 0 1px rgba(28, 210, 229, 0.25);
+    outline: 2px solid #ffffff;
 }
 
 .pelicula-card:hover .pelicula-card-overlay[b-733gyzqola] {
@@ -119,12 +240,246 @@
         height: 225px;
     }
 }
+
+/* ===== Variante alterna: usada en "Próximamente" y "Tendencias ahora".
+   Mismo patrón que las de arriba (mismo hover, mismo botón "+"), solo un
+   poco más chicas y con el badge de arriba-izquierda como diferenciador,
+   para que no queden recargadas ni "horribles". ===== */
+.pelicula-card--alt[b-733gyzqola],
+.pelicula-card--alt .pelicula-card-img-wrap[b-733gyzqola] {
+    width: 190px;
+    max-width: 190px;
+    height: 260px;
+}
+
+@media (max-width: 640px) {
+    .pelicula-card--alt[b-733gyzqola],
+    .pelicula-card--alt .pelicula-card-img-wrap[b-733gyzqola] {
+        width: 130px;
+        max-width: 130px;
+        height: 178px;
+    }
+}
+/* /Cards/PromoBanner.razor.rz.scp.css */
+.promo-banner[b-e3o5wvn6c7] {
+    margin: 0 4% 2.8rem 4%;
+    padding: 2.6rem;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(28, 210, 229, 0.28) 0%, rgba(28, 210, 229, 0) 45%),
+        radial-gradient(circle at 85% 80%, rgba(229, 9, 20, 0.28) 0%, rgba(229, 9, 20, 0) 45%),
+        linear-gradient(135deg, #141a2e 0%, #1b1030 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.promo-texto[b-e3o5wvn6c7] {
+    max-width: 460px;
+    position: relative;
+    z-index: 1;
+}
+
+.promo-marca[b-e3o5wvn6c7] {
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.9rem;
+}
+
+.promo-marca-signo[b-e3o5wvn6c7] {
+    background: linear-gradient(135deg, #1cd2e5 0%, #6c4cf1 55%, #e50914 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.promo-premium[b-e3o5wvn6c7] {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: #04060f;
+    background: linear-gradient(90deg, #1cd2e5, #6c4cf1);
+    vertical-align: middle;
+}
+
+.promo-texto h2[b-e3o5wvn6c7] {
+    color: #fff;
+    font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 0.7rem 0;
+}
+
+.promo-texto p[b-e3o5wvn6c7] {
+    color: #cfd3dc;
+    font-size: 0.92rem;
+    margin: 0 0 1.4rem 0;
+    line-height: 1.5;
+}
+
+.promo-btn[b-e3o5wvn6c7] {
+    background: linear-gradient(90deg, #1cd2e5, #6c4cf1);
+    color: #04060f;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.promo-btn:hover[b-e3o5wvn6c7] {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ---------- Mockup de dispositivos ---------- */
+
+.promo-dispositivos[b-e3o5wvn6c7] {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 340px;
+    max-width: 420px;
+    height: 260px;
+    margin: 0 auto;
+}
+
+.disp[b-e3o5wvn6c7] {
+    position: absolute;
+    background: #0b0d16;
+    border-radius: 10px;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.55);
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.disp-pantalla[b-e3o5wvn6c7] {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #12151f;
+}
+
+.disp-pantalla img[b-e3o5wvn6c7] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Monitor: pieza principal, centrada al fondo */
+.disp-monitor[b-e3o5wvn6c7] {
+    width: 62%;
+    aspect-ratio: 16 / 10;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.disp-monitor-cuello[b-e3o5wvn6c7] {
+    position: absolute;
+    left: 50%;
+    bottom: -16px;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 16px;
+    background: #0b0d16;
+}
+
+.disp-monitor-base[b-e3o5wvn6c7] {
+    position: absolute;
+    left: 50%;
+    bottom: -22px;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 8px;
+    border-radius: 4px;
+    background: #0b0d16;
+}
+
+/* Laptop: superpuesta abajo a la izquierda */
+.disp-laptop[b-e3o5wvn6c7] {
+    width: 46%;
+    aspect-ratio: 16 / 10;
+    left: 0;
+    bottom: 6%;
+    z-index: 2;
+    transform: rotate(-2deg);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.disp-laptop-base[b-e3o5wvn6c7] {
+    position: absolute;
+    left: -6%;
+    right: -6%;
+    bottom: -10px;
+    height: 10px;
+    border-radius: 0 0 8px 8px;
+    background: linear-gradient(180deg, #171c2b, #0b0d16);
+}
+
+/* Tablet: superpuesta arriba a la derecha */
+.disp-tablet[b-e3o5wvn6c7] {
+    width: 26%;
+    aspect-ratio: 3 / 4;
+    right: 4%;
+    top: 18%;
+    z-index: 3;
+    transform: rotate(3deg);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Teléfono: la pieza más pequeña, al frente, abajo a la derecha */
+.disp-phone[b-e3o5wvn6c7] {
+    width: 15%;
+    aspect-ratio: 9 / 19;
+    right: -2%;
+    bottom: -4%;
+    z-index: 4;
+    padding: 5px;
+    border: 2px solid #05060c;
+    transform: rotate(8deg);
+}
+
+@media (max-width: 780px) {
+    .promo-banner[b-e3o5wvn6c7] {
+        padding: 1.8rem;
+    }
+
+    .promo-dispositivos[b-e3o5wvn6c7] {
+        height: 220px;
+    }
+}
+
+@media (max-width: 640px) {
+    .promo-dispositivos[b-e3o5wvn6c7] {
+        max-width: 300px;
+        height: 190px;
+    }
+}
 /* /CarruselBanner/Carrusel.razor.rz.scp.css */
 .carrusel-banner[b-cwh9956y7n] {
     position: relative;
     width: 100%;
     height: 88vh;
     min-height: 520px;
+    background-color: #0c1120;
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -173,7 +528,7 @@
 }
 
 .badge-original[b-cwh9956y7n] {
-    background: linear-gradient(90deg, #7c3aed, #4338ca);
+    background: linear-gradient(90deg, #e50914, #7c3aed 60%, #1cd2e5);
     color: #fff;
     padding: 2px 10px;
     border-radius: 4px;
@@ -212,8 +567,9 @@
 }
 
 .btn-info[b-cwh9956y7n] {
-    background: rgba(109, 120, 139, 0.4);
+    background: linear-gradient(135deg, rgba(28, 210, 229, 0.18), rgba(108, 76, 241, 0.28));
     color: #ffffff;
+    border: 1px solid rgba(28, 210, 229, 0.35);
     backdrop-filter: blur(4px);
 }
 
@@ -222,29 +578,17 @@
     transform: translateY(-1px);
 }
 
+.btn-play:hover[b-cwh9956y7n] {
+    box-shadow: 0 6px 22px rgba(229, 9, 20, 0.35);
+}
+
+.btn-info:hover[b-cwh9956y7n] {
+    box-shadow: 0 6px 22px rgba(28, 210, 229, 0.3);
+    border-color: rgba(28, 210, 229, 0.6);
+}
+
 .icono-play[b-cwh9956y7n] {
     font-size: 0.85rem;
-}
-
-.btn-agregar[b-cwh9956y7n] {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.6);
-    background: rgba(19, 23, 39, 0.5);
-    color: #fff;
-    font-size: 1.3rem;
-    line-height: 1;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s ease, border-color 0.15s ease;
-}
-
-.btn-agregar:hover[b-cwh9956y7n] {
-    background: rgba(255,255,255,0.15);
-    border-color: #fff;
 }
 
 @media (max-width: 640px) {
@@ -326,7 +670,10 @@
 }
 
 .dplus-logo-signo[b-k3w2rsqd5o] {
-    color: #1cd2e5;
+    background: linear-gradient(135deg, #1cd2e5 0%, #6c4cf1 55%, #e50914 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .dplus-nav-links[b-k3w2rsqd5o] {
@@ -338,6 +685,7 @@
 }
 
 .dplus-link[b-k3w2rsqd5o] {
+    position: relative;
     color: #cfd3dc;
     text-decoration: none;
     font-size: 0.88rem;
@@ -345,6 +693,22 @@
     letter-spacing: 0.3px;
     cursor: pointer;
     transition: color 0.15s ease;
+}
+
+.dplus-link[b-k3w2rsqd5o]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #1cd2e5, #6c4cf1 55%, #e50914);
+    transition: right 0.2s ease;
+}
+
+.dplus-link:hover[b-k3w2rsqd5o]::after, .dplus-nav-links[b-k3w2rsqd5o]  a.active::after {
+    right: 0;
 }
 
 .dplus-link-estatico[b-k3w2rsqd5o] {
@@ -382,11 +746,12 @@
     font-weight: 700;
     cursor: pointer;
     font-family: inherit;
-    transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease, box-shadow 0.15s ease;
 }
 
     .dplus-btn-login:hover[b-k3w2rsqd5o] {
-        opacity: 0.85;
+        opacity: 0.92;
+        box-shadow: 0 4px 16px rgba(229, 9, 20, 0.35);
         text-decoration: none;
     }
 
@@ -569,9 +934,76 @@
         opacity: 0;
     }
 }
+/* /Components/Layout/ToastHost.razor.rz.scp.css */
+.dplus-toast[b-54o59hepcw] {
+    position: fixed;
+    left: 50%;
+    bottom: 2.2rem;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #12151f;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-left: 4px solid #1cd2e5;
+    padding: 0.85rem 1.4rem;
+    border-radius: 8px;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+    z-index: 500;
+    animation: dplus-toast-in-b-54o59hepcw 0.25s ease;
+}
+
+.dplus-toast-check[b-54o59hepcw] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
+    color: #04060f;
+    font-size: 0.7rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+@keyframes dplus-toast-in-b-54o59hepcw {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 640px) {
+    .dplus-toast[b-54o59hepcw] {
+        left: 50%;
+        width: 90%;
+        justify-content: center;
+        bottom: 1.2rem;
+    }
+}
 /* /Components/Pages/Home.razor.rz.scp.css */
 .filas-home[b-xdp5qi4igk] {
     position: relative;
     z-index: 3;
-    padding-top: 1rem;
+    padding-top: 2rem;
+}
+
+.dplus-cargando[b-xdp5qi4igk] {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cfd3dc;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1rem;
 }

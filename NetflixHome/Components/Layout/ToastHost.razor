@@ -1,0 +1,51 @@
+@using NetflixHome.ClassLogic
+@inject ToastService Toast
+@implements IDisposable
+
+@if (visible)
+{
+	<div class="dplus-toast">
+		<span class="dplus-toast-check">✓</span>
+		<span>@mensaje</span>
+	</div>
+}
+
+@code {
+	private bool visible;
+	private string mensaje = "";
+	private CancellationTokenSource? cts;
+
+	protected override void OnInitialized()
+	{
+		Toast.OnShow += MostrarMensaje;
+	}
+
+	private async void MostrarMensaje(string texto)
+	{
+		cts?.Cancel();
+		cts = new CancellationTokenSource();
+		var token = cts.Token;
+
+		mensaje = texto;
+		visible = true;
+		await InvokeAsync(StateHasChanged);
+
+		try
+		{
+			await Task.Delay(2500, token);
+		}
+		catch (TaskCanceledException)
+		{
+			return;
+		}
+
+		visible = false;
+		await InvokeAsync(StateHasChanged);
+	}
+
+	public void Dispose()
+	{
+		Toast.OnShow -= MostrarMensaje;
+		cts?.Cancel();
+	}
+}

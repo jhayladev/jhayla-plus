@@ -1,15 +1,71 @@
-﻿@page "/"
+@page "/"
 @using NetflixHome.ClassLogic
+@inject PeliculasApiClient ApiClient
+@inject ToastService Toast
+@inject IJSRuntime JS
 
-<Carrusel />
+@if (Todas is null)
+{
+	<p class="dplus-cargando">Cargando catálogo...</p>
+}
+else
+{
+	<Carrusel Destacada="@Destacada" />
 
-<div class="filas-home">
-	<ListaPeliculas TituloFila="Añadido recientemente" />
-	<ListaPeliculas TituloFila="Recomendado para ti" Peliculas="@Reordenadas" />
-</div>
+	<div class="filas-home">
+		<ListaPeliculas TituloFila="Populares en Jhayla+" Peliculas="@Populares" />
+		<ListaPeliculas TituloFila="Recomendado para ti" Peliculas="@Recomendadas" />
+
+		<PromoBanner OnSuscribir="MostrarToastSuscripcion" Peliculas="@Todas" />
+
+		<ListaPeliculas TituloFila="Próximamente" Peliculas="@Proximamente" EstiloAlterno="true" Etiqueta="Próximamente" />
+		<ListaPeliculas TituloFila="Tendencias ahora" Peliculas="@Tendencias" EstiloAlterno="true" Etiqueta="Tendencia" />
+	</div>
+}
 
 @code {
-	// Misma fuente de datos (PeliculasRepository), solo se reordena para
-	// mostrar una segunda fila distinta en la home, sin inventar películas nuevas.
-	List<Peliculas> Reordenadas => PeliculasRepository.Todas.AsEnumerable().Reverse().ToList();
+	// La fuente de datos es JhaylaPlusAPI (que lee de la base de datos).
+	// Si agregas películas nuevas y haces Update-Database, aparecen aquí solas
+	// la próxima vez que se cargue la página.
+	private List<Peliculas>? Todas;
+
+	// Se reparte por posición (no por Id) para que ninguna fila dependa de que
+	// existan Ids concretos en la base de datos: si el catálogo trae menos
+	// películas de las esperadas, las filas simplemente muestran las que hay
+	// en vez de aparecer vacías por un rango de Id que no llegó a cargarse.
+	private List<Peliculas> Populares => Todas?.Take(7).ToList() ?? new();
+	private List<Peliculas> Proximamente => Todas?.Skip(7).ToList() ?? new();
+
+	private List<Peliculas> Recomendadas => Todas is null
+		? new List<Peliculas>()
+		: Todas.AsEnumerable().Reverse().ToList();
+
+	private List<Peliculas> Tendencias => Todas is null
+		? new List<Peliculas>()
+		: Todas.Where((p, indice) => indice % 2 == 0)
+			.Concat(Todas.Where((p, indice) => indice % 2 != 0))
+			.ToList();
+
+	private Peliculas? Destacada => Todas?.FirstOrDefault(p => p.Id == 2) ?? Todas?.FirstOrDefault();
+
+	protected override async Task OnInitializedAsync()
+	{
+		Todas = await ApiClient.ObtenerTodasAsync();
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		// Engancha la detección de scroll de cada fila (activa la difuminación
+		// izquierda cuando corresponde). Es seguro llamarlo en cada render:
+		// filas-scroll.js no vuelve a enganchar una fila ya enganchada.
+		if (Todas is not null)
+		{
+			await JS.InvokeVoidAsync("iniciarFilasScroll");
+		}
+	}
+
+	private void MostrarToastSuscripcion()
+	{
+		Toast.Mostrar("Función Premium próximamente disponible");
+	}
 }

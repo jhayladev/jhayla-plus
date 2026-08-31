@@ -1,5 +1,15 @@
 .filas-home[b-xdp5qi4igk] {
     position: relative;
     z-index: 3;
-    padding-top: 1rem;
+    padding-top: 2rem;
+}
+
+.dplus-cargando[b-xdp5qi4igk] {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cfd3dc;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1rem;
 }

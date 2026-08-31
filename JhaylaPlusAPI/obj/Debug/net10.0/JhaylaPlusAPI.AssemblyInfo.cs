@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JhaylaPlusAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3148be57290d03d2ea5199fa43e9aa692d809601")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3959274ad4080f0f78ccc98c3427b821b8453975")]
 [assembly: System.Reflection.AssemblyProductAttribute("JhaylaPlusAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JhaylaPlusAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

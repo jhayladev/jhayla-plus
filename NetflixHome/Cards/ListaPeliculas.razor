@@ -11,11 +11,18 @@ else
 {
 	<section class="fila-seccion">
 		<h2 class="fila-titulo">@TituloFila</h2>
-		<div class="fila-peliculas">
-			@foreach (var pelicula in Peliculas)
-			{
-				<PeliculaCard Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"></PeliculaCard>
-			}
+		<div class="fila-envoltura">
+			<div class="fila-fade-izquierda"></div>
+			<div class="fila-peliculas">
+				@foreach (var pelicula in Peliculas)
+				{
+					<PeliculaCard Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"
+								  EstiloAlterno="@EstiloAlterno" Etiqueta="@Etiqueta"></PeliculaCard>
+				}
+			</div>
+			<div class="fila-fade-derecha">
+				<span class="fila-flecha">›</span>
+			</div>
 		</div>
 	</section>
 }
@@ -28,6 +35,14 @@ else
 
 	[Parameter]
 	public List<Peliculas>? Peliculas { get; set; }
+
+	// Si es true, las cards de esta fila usan el diseño alterno (ver PeliculaCard.razor.css).
+	[Parameter]
+	public bool EstiloAlterno { get; set; }
+
+	// Badge opcional mostrado en cada card cuando EstiloAlterno es true.
+	[Parameter]
+	public string? Etiqueta { get; set; }
 
 	protected override void OnInitialized()
 	{
