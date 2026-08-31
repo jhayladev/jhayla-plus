@@ -24,15 +24,9 @@ else
 }
 
 @code {
-	// La fuente de datos es JhaylaPlusAPI (que lee de la base de datos).
-	// Si agregas películas nuevas y haces Update-Database, aparecen aquí solas
-	// la próxima vez que se cargue la página.
+
 	private List<Peliculas>? Todas;
 
-	// Se reparte por posición (no por Id) para que ninguna fila dependa de que
-	// existan Ids concretos en la base de datos: si el catálogo trae menos
-	// películas de las esperadas, las filas simplemente muestran las que hay
-	// en vez de aparecer vacías por un rango de Id que no llegó a cargarse.
 	private List<Peliculas> Populares => Todas?.Take(7).ToList() ?? new();
 	private List<Peliculas> Proximamente => Todas?.Skip(7).ToList() ?? new();
 
@@ -55,17 +49,17 @@ else
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
-		// Engancha la detección de scroll de cada fila (activa la difuminación
-		// izquierda cuando corresponde). Es seguro llamarlo en cada render:
-		// filas-scroll.js no vuelve a enganchar una fila ya enganchada.
 		if (Todas is not null)
 		{
 			await JS.InvokeVoidAsync("iniciarFilasScroll");
 		}
 	}
 
+	private bool suscrip;
+
 	private void MostrarToastSuscripcion()
 	{
-		Toast.Mostrar("Función Premium próximamente disponible");
+		suscrip = !suscrip;
+		Toast.Mostrar(suscrip ? "Función Premium próximamente disponible" : "Podras suscribirte en 4 dias");
 	}
 }

@@ -13,7 +13,7 @@
 
 		<button class="card-mas @(agregada ? "card-mas--agregada" : "")" type="button"
 				title="@(agregada ? "Agregada a Mi Lista" : "Añadir a Mi Lista")"
-				@onclick="Agregar" @onclick:stopPropagation="true">
+				onclick="@Agregar">
 			@(agregada ? "✓" : "+")
 		</button>
 
@@ -41,19 +41,15 @@
 	[Parameter]
 	public bool EstiloAlterno { get; set; }
 
-	// Texto corto del badge en la esquina (ej: "Próximamente", "Tendencia"). Opcional.
 	[Parameter]
 	public string? Etiqueta { get; set; }
 
-	// Antes solo se llamaba a Toast.Mostrar(): si el toast no llegaba a
-	// dispararse (o pasaba desapercibido) el clic parecía no hacer nada.
-	// Ahora el botón cambia de estado por sí mismo (+ -> ✓), así el cambio
-	// se ve siempre en la propia tarjeta, sin depender de nada más.
+
 	private bool agregada;
 
 	private void Agregar()
 	{
 		agregada = !agregada;
-		Toast.Mostrar(agregada ? "Agregada a Mi Lista" : "Quitada de Mi Lista");
+		Toast.Mostrar(agregada ? "Agregada a tu lista correctamente" : "Removida de tu lista correctamente");
 	}
 }

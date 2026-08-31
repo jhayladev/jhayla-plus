@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafael\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\JhaylaPlusAPI.csproj": {}
+    "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\JhaylaPlusAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafael\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\JhaylaPlusAPI.csproj": {
+    "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\JhaylaPlusAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafael\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\JhaylaPlusAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\JhaylaPlusAPI.csproj",
         "projectName": "JhaylaPlusAPI",
-        "projectPath": "C:\\Users\\Rafael\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\JhaylaPlusAPI.csproj",
-        "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafael\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\obj\\",
+        "projectPath": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\JhaylaPlusAPI.csproj",
+        "packagesPath": "C:\\Users\\Aprendiz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\JhaylaPlusAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aprendiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

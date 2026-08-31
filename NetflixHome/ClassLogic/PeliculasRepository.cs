@@ -1,8 +1,5 @@
 namespace NetflixHome.ClassLogic
 {
-    // Catálogo local de respaldo: solo se usa si JhaylaPlusAPI no responde,
-    // para que la página no se quede en blanco mientras el backend está caído.
-    // La fuente de datos "real" es la API (ver PeliculasApiClient).
     public static class PeliculasRepository
     {
         public static List<Peliculas> Todas { get; } = new List<Peliculas>

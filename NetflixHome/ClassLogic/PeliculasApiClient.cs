@@ -2,9 +2,6 @@ using System.Net.Http.Json;
 
 namespace NetflixHome.ClassLogic
 {
-    // Se encarga de traer el catálogo desde JhaylaPlusAPI (que a su vez lee de la base de datos).
-    // Si la API no está corriendo (o falla la conexión), cae de vuelta al catálogo local
-    // de PeliculasRepository para que la página no se quede en blanco.
     public class PeliculasApiClient
     {
         private readonly HttpClient _http;
