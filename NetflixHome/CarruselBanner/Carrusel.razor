@@ -13,7 +13,7 @@
 			</div>
 
 			<div class="banner-acciones">
-				<button class="btn-play" type="button">
+				<button class="btn-play" type="button" onclick="@Reproducir">
 					<span class="icono-play">▶</span> Reproducir
 				</button>
 				<button class="btn-info" type="button">
@@ -29,4 +29,15 @@
 @code {
 	[Parameter]
 	public Peliculas? Destacada { get; set; }
+	[Parameter]
+	public EventCallback OnReproducir { get; set; }
+
+	private async Task Reproducir()
+	{
+		if (OnReproducir.HasDelegate)
+		{
+			await OnReproducir.InvokeAsync();
+
+		}
+	}
 }

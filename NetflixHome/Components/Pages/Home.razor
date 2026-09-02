@@ -10,7 +10,7 @@
 }
 else
 {
-	<Carrusel Destacada="@Destacada" />
+	<Carrusel Destacada="@Destacada" OnReproducir="MostrarToastReproducir" />
 
 	<div class="filas-home">
 		<ListaPeliculas TituloFila="Populares en Jhayla+" Peliculas="@Populares" />
@@ -79,5 +79,12 @@ else
 	{
 		suscrip = !suscrip;
 		Toast.Mostrar(suscrip ? "Función Premium próximamente disponible" : "Podras suscribirte en 4 dias");
+	}
+
+	private bool repro;
+	private void MostrarToastReproducir()
+	{
+		repro = !repro;
+		Toast.Mostrar(repro ? "Pronto podras reproducir esta Pelicula/Serie" : "Ten paciencia");
 	}
 }

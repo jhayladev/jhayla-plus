@@ -4,7 +4,7 @@
     "Projects": [
       {
         "Path": "JhaylaPlusAPI\\JhaylaPlusAPI.csproj",
-        "Action": "Start"
+        "Action": "StartWithoutDebugging"
       },
       {
         "Path": "NetflixHome\\NetflixHome.csproj",

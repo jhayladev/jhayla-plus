@@ -23,8 +23,8 @@
 
 /* Panel de texto: ancho fijo, nunca se achica ni se scrollea. */
 .coleccion-panel[b-41zq6jqcms] {
-    flex: 0 0 260px;
-    max-width: 260px;
+    flex: 0 0 300px;
+    max-width: 300px;
     padding: 2.2rem 1.6rem;
     display: flex;
     flex-direction: column;
@@ -115,7 +115,7 @@
 .coleccion-envoltura .fila-fade-izquierda[b-41zq6jqcms] {
     position: absolute;
     top: 0;
-    left: 260px;
+    left: 300px;
     bottom: 0;
     width: 64px;
     z-index: 2;

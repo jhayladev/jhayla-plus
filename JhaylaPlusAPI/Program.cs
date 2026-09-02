@@ -10,8 +10,12 @@ builder.Services.AddControllers();
 // 1. Obtener la cadena de conexión desde appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("ConnectionJhaylaDB");
 
-// 2. Registrar el DbContext
+// 2. Registrar el DbContext -- Peliculas
 builder.Services.AddDbContext<PeliculasDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+// 3. Registrar el DbContext -- Usuarios    
+builder.Services.AddDbContext<UsuariosDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
