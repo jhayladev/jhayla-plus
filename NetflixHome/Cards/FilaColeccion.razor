@@ -1,0 +1,60 @@
+@using NetflixHome.ClassLogic
+
+@if (Peliculas == null)
+{
+	<p>Cargando peliculas, espere un momento...</p>
+}
+else if (Peliculas.Count == 0)
+{
+	<p>No hay peliculas para mostrar.</p>
+}
+else
+{
+	<section class="coleccion-seccion">
+		<div class="coleccion-envoltura fila-envoltura">
+
+			<div class="coleccion-panel">
+				<span class="coleccion-etiqueta-chica">@TituloChico</span>
+				<h2 class="coleccion-titulo-grande">@TituloGrande</h2>
+				@if (!string.IsNullOrWhiteSpace(Descripcion))
+				{
+					<p class="coleccion-descripcion">@Descripcion</p>
+				}
+				<button class="coleccion-btn-detalles" type="button">
+					Details
+				</button>
+			</div>
+
+			<div class="fila-fade-izquierda"></div>
+
+			<div class="fila-peliculas coleccion-cards">
+				@foreach (var pelicula in Peliculas)
+				{
+					<PeliculaCard Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"></PeliculaCard>
+				}
+			</div>
+
+			<div class="fila-fade-derecha">
+				<span class="fila-flecha">›</span>
+			</div>
+		</div>
+	</section>
+}
+
+@code {
+
+	// Texto pequeño arriba del título (ej: "MADE IN JHAYLA+").
+	[Parameter]
+	public string TituloChico { get; set; } = "COLLECTION";
+
+	// Título grande del panel (ej: "Próximamente").
+	[Parameter]
+	public string TituloGrande { get; set; } = "";
+
+	// Texto corto debajo del título (opcional).
+	[Parameter]
+	public string? Descripcion { get; set; }
+
+	[Parameter]
+	public List<Peliculas>? Peliculas { get; set; }
+}

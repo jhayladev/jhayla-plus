@@ -18,8 +18,15 @@ else
 
 		<PromoBanner OnSuscribir="MostrarToastSuscripcion" Peliculas="@Todas" />
 
-		<ListaPeliculas TituloFila="Próximamente" Peliculas="@Proximamente" EstiloAlterno="true" Etiqueta="Próximamente" />
-		<ListaPeliculas TituloFila="Tendencias ahora" Peliculas="@Tendencias" EstiloAlterno="true" Etiqueta="Tendencia" />
+		<FilaColeccion TituloChico="JHAYLA+ COLLECTION" TituloGrande="Próximamente"
+					   Descripcion="Los próximos estrenos que se vienen a Jhayla+."
+					   Peliculas="@Proximamente" />
+
+		<ListaPeliculas TituloFila="Más para ver" Peliculas="@MasParaVer" />
+
+		<FilaColeccion TituloChico="JHAYLA+ COLLECTION" TituloGrande="Tendencias ahora"
+					   Descripcion="Lo que todos están viendo esta semana."
+					   Peliculas="@Tendencias" />
 	</div>
 }
 
@@ -28,11 +35,22 @@ else
 	private List<Peliculas>? Todas;
 
 	private List<Peliculas> Populares => Todas?.Take(7).ToList() ?? new();
-	private List<Peliculas> Proximamente => Todas?.Skip(7).ToList() ?? new();
+
+	// Si el catálogo tiene pocas películas, Skip(7) puede quedar vacío:
+	// en ese caso se usa el catálogo completo para no mostrar la fila vacía.
+	private List<Peliculas> Proximamente => Todas is null
+		? new List<Peliculas>()
+		: (Todas.Skip(7).Any() ? Todas.Skip(7).ToList() : Todas);
 
 	private List<Peliculas> Recomendadas => Todas is null
 		? new List<Peliculas>()
 		: Todas.AsEnumerable().Reverse().ToList();
+
+	// Fila intercalada entre las 2 colecciones: otro orden distinto
+	// para que no se repita tal cual con Populares/Recomendadas/Tendencias.
+	private List<Peliculas> MasParaVer => Todas is null
+		? new List<Peliculas>()
+		: Todas.Skip(3).Concat(Todas.Take(3)).ToList();
 
 	private List<Peliculas> Tendencias => Todas is null
 		? new List<Peliculas>()

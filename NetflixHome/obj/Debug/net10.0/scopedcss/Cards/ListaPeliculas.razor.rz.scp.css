@@ -16,54 +16,45 @@
     position: relative;
 }
 
-/* Difuminados a los costados de la fila: por defecto invisibles.
-   El JS (filaScroll.js) les agrega/quita la clase "visible" según la
-   posición del scroll, así solo aparecen cuando de verdad hay más
-   contenido escondido hacia ese lado. */
-.fila-fade-izquierda[b-bh4lg1gu8n],
 .fila-fade-derecha[b-bh4lg1gu8n] {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 20px;
     width: 64px;
+    z-index: 2;
     display: flex;
     align-items: center;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-
-.fila-fade-izquierda.visible[b-bh4lg1gu8n],
-.fila-fade-derecha.visible[b-bh4lg1gu8n] {
-    opacity: 1;
-}
-
-.fila-fade-derecha[b-bh4lg1gu8n] {
-    right: 0;
     justify-content: flex-end;
     padding-right: 6px;
     background: linear-gradient(90deg, rgba(4,6,15,0) 0%, rgba(4,6,15,0.85) 75%);
+    pointer-events: none;
 }
 
+/* Difuminación izquierda: oculta en reposo (fila al inicio) y se muestra con
+   fade-in en cuanto la fila se desplaza hacia la derecha (ver filas-scroll.js,
+   que agrega la clase "fila-en-scroll" a .fila-envoltura). */
 .fila-fade-izquierda[b-bh4lg1gu8n] {
+    position: absolute;
+    top: 0;
     left: 0;
-    justify-content: flex-start;
-    padding-left: 6px;
+    bottom: 20px;
+    width: 64px;
+    z-index: 2;
     background: linear-gradient(270deg, rgba(4,6,15,0) 0%, rgba(4,6,15,0.85) 75%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.fila-envoltura.fila-en-scroll .fila-fade-izquierda[b-bh4lg1gu8n] {
+    opacity: 1;
 }
 
 .fila-flecha[b-bh4lg1gu8n] {
     color: rgba(255,255,255,0.8);
     font-size: 1.8rem;
     font-weight: 700;
-}
-
-.fila-flecha-izq[b-bh4lg1gu8n] {
-    /* Mismo glifo que la derecha pero espejado, para no depender de
-       que la fuente tenga un carácter "‹" con el mismo grosor que "›". */
-    display: inline-block;
-    transform: scaleX(-1);
 }
 
 .fila-peliculas[b-bh4lg1gu8n] {
@@ -77,7 +68,6 @@
     overflow-y: hidden;
     max-width: 100%;
     padding: 24px 10px 32px 10px;
-    scroll-behavior: smooth;
 }
 
 .fila-peliculas[b-bh4lg1gu8n]::-webkit-scrollbar {

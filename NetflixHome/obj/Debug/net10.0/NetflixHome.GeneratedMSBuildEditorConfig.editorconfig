@@ -20,77 +20,85 @@ build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = NetflixHome
 build_property.RootNamespace = NetflixHome
-build_property.ProjectDir = C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\
+build_property.ProjectDir = C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome
+build_property.MSBuildProjectDirectory = C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/App.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Pages/Counter.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Pages/Error.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Pages/NotFound.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Pages/Weather.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Routes.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/_Imports.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Cards/ListaPeliculas.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Cards/FilaColeccion.razor]
+build_metadata.AdditionalFiles.TargetPath = Q2FyZHNcRmlsYUNvbGVjY2lvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-41zq6jqcms
+
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Cards/ListaPeliculas.razor]
 build_metadata.AdditionalFiles.TargetPath = Q2FyZHNcTGlzdGFQZWxpY3VsYXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-bh4lg1gu8n
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Cards/PeliculaCard.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Cards/PeliculaCard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q2FyZHNcUGVsaWN1bGFDYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-733gyzqola
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Cards/PromoBanner.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Cards/PromoBanner.razor]
 build_metadata.AdditionalFiles.TargetPath = Q2FyZHNcUHJvbW9CYW5uZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-e3o5wvn6c7
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/CarruselBanner/Carrusel.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/CarruselBanner/Carrusel.razor]
 build_metadata.AdditionalFiles.TargetPath = Q2FycnVzZWxCYW5uZXJcQ2FycnVzZWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-cwh9956y7n
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Layout/MainLayout.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Layout/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRm9vdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-kydvpxogke
+
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-e9x7629z48
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Layout/NavMenu.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-k3w2rsqd5o
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Layout/ReconnectModal.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Layout/ReconnectModal.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcUmVjb25uZWN0TW9kYWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-0cxeyon9aj
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Layout/ToastHost.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Layout/ToastHost.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcVG9hc3RIb3N0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-54o59hepcw
 
-[C:/Users/Aprendiz/source/repos/jhayla-plus/NetflixHome/Components/Pages/Home.razor]
+[C:/Users/Windows 11/source/repos/jhayla-plus/NetflixHome/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-xdp5qi4igk

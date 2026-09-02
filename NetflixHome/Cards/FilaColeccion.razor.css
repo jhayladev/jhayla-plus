@@ -1,0 +1,169 @@
+.coleccion-seccion {
+    margin: 0 0 2.6rem 0;
+    padding: 0 4%;
+}
+
+/* Contenedor único: panel + cards viven en la misma fila flex,
+   así todo queda dentro de un solo bloque, igual que en la referencia
+   de Disney+/Netflix. Fondo más suave (antes muy oscuro) y sin overflow
+   hidden en el borde panel/cards para que nada se recorte de golpe. */
+.coleccion-envoltura {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    border-radius: 16px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 30%, rgba(120, 90, 255, 0.28) 0%, rgba(120, 90, 255, 0) 60%),
+        radial-gradient(circle at 90% 75%, rgba(229, 60, 90, 0.20) 0%, rgba(229, 60, 90, 0) 60%),
+        linear-gradient(135deg, #232c4d 0%, #2c1f4a 100%);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* Panel de texto: ancho fijo, nunca se achica ni se scrollea. */
+.coleccion-panel {
+    flex: 0 0 260px;
+    max-width: 260px;
+    padding: 2.2rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.6rem;
+    position: relative;
+    z-index: 3;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.coleccion-etiqueta-chica {
+    color: #1cd2e5;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.coleccion-titulo-grande {
+    color: #fff;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.coleccion-descripcion {
+    color: #b7bcc9;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.coleccion-btn-detalles {
+    align-self: flex-start;
+    margin-top: 0.6rem;
+    padding: 0.55rem 1.3rem;
+    border-radius: 999px;
+    border: none;
+    background: #fff;
+    color: #141a2e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.coleccion-btn-detalles:hover {
+    background: #e6e6e6;
+    transform: scale(1.04);
+}
+
+/* Tira de cards: ocupa el resto del ancho y scrollea horizontal.
+   Reusa la clase "fila-peliculas" (para que filas-scroll.js la enganche
+   igual que a las demás filas), pero como el CSS de Blazor es aislado
+   por componente, las reglas de flex/scroll de ListaPeliculas.razor.css
+   NO llegan hasta acá — hay que declararlas de nuevo, completas. */
+.coleccion-cards {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 28px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 24px 10px 32px 16px;
+}
+
+.coleccion-cards::-webkit-scrollbar {
+    height: 6px;
+}
+
+.coleccion-cards::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
+
+.coleccion-cards::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Fundidos: mismo motivo que arriba, se redeclaran completos acá en vez
+   de depender de las reglas de ListaPeliculas.razor.css. El color del
+   degradado ahora sale del mismo tono del panel (no negro puro), para
+   que se sienta parte del mismo bloque y no una sombra dura pegada. */
+.coleccion-envoltura .fila-fade-izquierda {
+    position: absolute;
+    top: 0;
+    left: 260px;
+    bottom: 0;
+    width: 64px;
+    z-index: 2;
+    background: linear-gradient(270deg, rgba(35,44,77,0) 0%, rgba(35,44,77,0.78) 75%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+/* filas-scroll.js le agrega "fila-en-scroll" a .fila-envoltura apenas
+   detecta scrollLeft > 0: ahí es cuando se muestra el fundido izquierdo. */
+.coleccion-envoltura.fila-en-scroll .fila-fade-izquierda {
+    opacity: 1;
+}
+
+.coleccion-envoltura .fila-fade-derecha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 64px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 6px;
+    background: linear-gradient(90deg, rgba(44,31,74,0) 0%, rgba(44,31,74,0.75) 75%);
+    pointer-events: none;
+}
+
+.coleccion-envoltura .fila-flecha {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .coleccion-envoltura {
+        flex-direction: column;
+    }
+
+    .coleccion-panel {
+        flex: 0 0 auto;
+        max-width: 100%;
+        padding: 1.6rem 1.2rem 0.4rem 1.2rem;
+    }
+
+    .coleccion-envoltura .fila-fade-izquierda {
+        left: 0;
+    }
+}

@@ -53,22 +53,21 @@
     transform: scale(1.1);
 }
 
-/* Estado "agregada": queda marcado con el check y color activo,
-   así el clic da una señal visual inmediata y persistente
-   (no depende únicamente del toast, que desaparece en unos segundos). */
+/* Estado "agregada": queda marcada con el check y un pequeño "pop" al cambiar,
+   así el clic siempre se nota en la propia tarjeta. */
 .card-mas--agregada[b-733gyzqola] {
     background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
     border-color: transparent;
-    animation: card-mas-pop-b-733gyzqola 0.25s ease;
+    animation: card-mas-pop-b-733gyzqola 0.28s ease;
 }
 
 @keyframes card-mas-pop-b-733gyzqola {
     0% {
-        transform: scale(0.75);
+        transform: scale(1);
     }
 
-    60% {
-        transform: scale(1.18);
+    45% {
+        transform: scale(1.35);
     }
 
     100% {

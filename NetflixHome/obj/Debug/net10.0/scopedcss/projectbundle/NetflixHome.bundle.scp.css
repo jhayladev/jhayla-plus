@@ -1,3 +1,173 @@
+/* /Cards/FilaColeccion.razor.rz.scp.css */
+.coleccion-seccion[b-41zq6jqcms] {
+    margin: 0 0 2.6rem 0;
+    padding: 0 4%;
+}
+
+/* Contenedor único: panel + cards viven en la misma fila flex,
+   así todo queda dentro de un solo bloque, igual que en la referencia
+   de Disney+/Netflix. Fondo más suave (antes muy oscuro) y sin overflow
+   hidden en el borde panel/cards para que nada se recorte de golpe. */
+.coleccion-envoltura[b-41zq6jqcms] {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    border-radius: 16px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 30%, rgba(120, 90, 255, 0.28) 0%, rgba(120, 90, 255, 0) 60%),
+        radial-gradient(circle at 90% 75%, rgba(229, 60, 90, 0.20) 0%, rgba(229, 60, 90, 0) 60%),
+        linear-gradient(135deg, #232c4d 0%, #2c1f4a 100%);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* Panel de texto: ancho fijo, nunca se achica ni se scrollea. */
+.coleccion-panel[b-41zq6jqcms] {
+    flex: 0 0 260px;
+    max-width: 260px;
+    padding: 2.2rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.6rem;
+    position: relative;
+    z-index: 3;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.coleccion-etiqueta-chica[b-41zq6jqcms] {
+    color: #1cd2e5;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.coleccion-titulo-grande[b-41zq6jqcms] {
+    color: #fff;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.coleccion-descripcion[b-41zq6jqcms] {
+    color: #b7bcc9;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.coleccion-btn-detalles[b-41zq6jqcms] {
+    align-self: flex-start;
+    margin-top: 0.6rem;
+    padding: 0.55rem 1.3rem;
+    border-radius: 999px;
+    border: none;
+    background: #fff;
+    color: #141a2e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.coleccion-btn-detalles:hover[b-41zq6jqcms] {
+    background: #e6e6e6;
+    transform: scale(1.04);
+}
+
+/* Tira de cards: ocupa el resto del ancho y scrollea horizontal.
+   Reusa la clase "fila-peliculas" (para que filas-scroll.js la enganche
+   igual que a las demás filas), pero como el CSS de Blazor es aislado
+   por componente, las reglas de flex/scroll de ListaPeliculas.razor.css
+   NO llegan hasta acá — hay que declararlas de nuevo, completas. */
+.coleccion-cards[b-41zq6jqcms] {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 28px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 24px 10px 32px 16px;
+}
+
+.coleccion-cards[b-41zq6jqcms]::-webkit-scrollbar {
+    height: 6px;
+}
+
+.coleccion-cards[b-41zq6jqcms]::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
+
+.coleccion-cards[b-41zq6jqcms]::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Fundidos: mismo motivo que arriba, se redeclaran completos acá en vez
+   de depender de las reglas de ListaPeliculas.razor.css. El color del
+   degradado ahora sale del mismo tono del panel (no negro puro), para
+   que se sienta parte del mismo bloque y no una sombra dura pegada. */
+.coleccion-envoltura .fila-fade-izquierda[b-41zq6jqcms] {
+    position: absolute;
+    top: 0;
+    left: 260px;
+    bottom: 0;
+    width: 64px;
+    z-index: 2;
+    background: linear-gradient(270deg, rgba(35,44,77,0) 0%, rgba(35,44,77,0.78) 75%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+/* filas-scroll.js le agrega "fila-en-scroll" a .fila-envoltura apenas
+   detecta scrollLeft > 0: ahí es cuando se muestra el fundido izquierdo. */
+.coleccion-envoltura.fila-en-scroll .fila-fade-izquierda[b-41zq6jqcms] {
+    opacity: 1;
+}
+
+.coleccion-envoltura .fila-fade-derecha[b-41zq6jqcms] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 64px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 6px;
+    background: linear-gradient(90deg, rgba(44,31,74,0) 0%, rgba(44,31,74,0.75) 75%);
+    pointer-events: none;
+}
+
+.coleccion-envoltura .fila-flecha[b-41zq6jqcms] {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .coleccion-envoltura[b-41zq6jqcms] {
+        flex-direction: column;
+    }
+
+    .coleccion-panel[b-41zq6jqcms] {
+        flex: 0 0 auto;
+        max-width: 100%;
+        padding: 1.6rem 1.2rem 0.4rem 1.2rem;
+    }
+
+    .coleccion-envoltura .fila-fade-izquierda[b-41zq6jqcms] {
+        left: 0;
+    }
+}
 /* /Cards/ListaPeliculas.razor.rz.scp.css */
 .fila-seccion[b-bh4lg1gu8n] {
     margin: 0 0 2.6rem 0;
@@ -17,54 +187,45 @@
     position: relative;
 }
 
-/* Difuminados a los costados de la fila: por defecto invisibles.
-   El JS (filaScroll.js) les agrega/quita la clase "visible" según la
-   posición del scroll, así solo aparecen cuando de verdad hay más
-   contenido escondido hacia ese lado. */
-.fila-fade-izquierda[b-bh4lg1gu8n],
 .fila-fade-derecha[b-bh4lg1gu8n] {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 20px;
     width: 64px;
+    z-index: 2;
     display: flex;
     align-items: center;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-
-.fila-fade-izquierda.visible[b-bh4lg1gu8n],
-.fila-fade-derecha.visible[b-bh4lg1gu8n] {
-    opacity: 1;
-}
-
-.fila-fade-derecha[b-bh4lg1gu8n] {
-    right: 0;
     justify-content: flex-end;
     padding-right: 6px;
     background: linear-gradient(90deg, rgba(4,6,15,0) 0%, rgba(4,6,15,0.85) 75%);
+    pointer-events: none;
 }
 
+/* Difuminación izquierda: oculta en reposo (fila al inicio) y se muestra con
+   fade-in en cuanto la fila se desplaza hacia la derecha (ver filas-scroll.js,
+   que agrega la clase "fila-en-scroll" a .fila-envoltura). */
 .fila-fade-izquierda[b-bh4lg1gu8n] {
+    position: absolute;
+    top: 0;
     left: 0;
-    justify-content: flex-start;
-    padding-left: 6px;
+    bottom: 20px;
+    width: 64px;
+    z-index: 2;
     background: linear-gradient(270deg, rgba(4,6,15,0) 0%, rgba(4,6,15,0.85) 75%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.fila-envoltura.fila-en-scroll .fila-fade-izquierda[b-bh4lg1gu8n] {
+    opacity: 1;
 }
 
 .fila-flecha[b-bh4lg1gu8n] {
     color: rgba(255,255,255,0.8);
     font-size: 1.8rem;
     font-weight: 700;
-}
-
-.fila-flecha-izq[b-bh4lg1gu8n] {
-    /* Mismo glifo que la derecha pero espejado, para no depender de
-       que la fuente tenga un carácter "‹" con el mismo grosor que "›". */
-    display: inline-block;
-    transform: scaleX(-1);
 }
 
 .fila-peliculas[b-bh4lg1gu8n] {
@@ -78,7 +239,6 @@
     overflow-y: hidden;
     max-width: 100%;
     padding: 24px 10px 32px 10px;
-    scroll-behavior: smooth;
 }
 
 .fila-peliculas[b-bh4lg1gu8n]::-webkit-scrollbar {
@@ -149,22 +309,21 @@
     transform: scale(1.1);
 }
 
-/* Estado "agregada": queda marcado con el check y color activo,
-   así el clic da una señal visual inmediata y persistente
-   (no depende únicamente del toast, que desaparece en unos segundos). */
+/* Estado "agregada": queda marcada con el check y un pequeño "pop" al cambiar,
+   así el clic siempre se nota en la propia tarjeta. */
 .card-mas--agregada[b-733gyzqola] {
     background: linear-gradient(135deg, #1cd2e5, #6c4cf1);
     border-color: transparent;
-    animation: card-mas-pop-b-733gyzqola 0.25s ease;
+    animation: card-mas-pop-b-733gyzqola 0.28s ease;
 }
 
 @keyframes card-mas-pop-b-733gyzqola {
     0% {
-        transform: scale(0.75);
+        transform: scale(1);
     }
 
-    60% {
-        transform: scale(1.18);
+    45% {
+        transform: scale(1.35);
     }
 
     100% {
@@ -604,6 +763,139 @@
     .btn-play[b-cwh9956y7n], .btn-info[b-cwh9956y7n] {
         padding: 0.6rem 1.1rem;
         font-size: 0.9rem;
+    }
+}
+/* /Components/Layout/Footer.razor.rz.scp.css */
+.dplus-footer[b-kydvpxogke] {
+    margin-top: 3rem;
+    padding: 3rem 4% 1.6rem 4%;
+    background: linear-gradient(180deg, rgba(4,6,15,0) 0%, #0a0d1c 18%, #0a0d1c 100%);
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.footer-contenido[b-kydvpxogke] {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr 0.8fr 0.8fr 1.4fr;
+    gap: 2.4rem;
+}
+
+.footer-columna h3[b-kydvpxogke] {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.9rem 0;
+}
+
+.footer-columna ul[b-kydvpxogke] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.footer-columna ul li[b-kydvpxogke] {
+    color: #9aa0b4;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: color 0.15s ease;
+    width: fit-content;
+}
+
+.footer-columna ul li:hover[b-kydvpxogke] {
+    color: #fff;
+}
+
+.footer-marca[b-kydvpxogke] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-logo[b-kydvpxogke] {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo-signo[b-kydvpxogke] {
+    background: linear-gradient(135deg, #1cd2e5 0%, #6c4cf1 55%, #e50914 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-tagline[b-kydvpxogke] {
+    color: #9aa0b4;
+    font-size: 0.85rem;
+    margin: 0;
+    max-width: 320px;
+}
+
+.footer-contacto[b-kydvpxogke] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-top: 0.4rem;
+}
+
+.footer-contacto-item[b-kydvpxogke] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #d9dbe6;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    transition: color 0.15s ease;
+}
+
+.footer-contacto-item:hover[b-kydvpxogke] {
+    color: #1cd2e5;
+}
+
+.footer-contacto-icono[b-kydvpxogke] {
+    font-size: 1rem;
+}
+
+.footer-restricciones p[b-kydvpxogke] {
+    color: #9aa0b4;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin: 0 0 0.7rem 0;
+}
+
+.footer-aviso[b-kydvpxogke] {
+    color: #6e7387 !important;
+    font-size: 0.72rem !important;
+}
+
+.footer-linea[b-kydvpxogke] {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 2.4rem 0 1.2rem 0;
+}
+
+.footer-inferior[b-kydvpxogke] {
+    color: #6e7387;
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .footer-contenido[b-kydvpxogke] {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.4rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .footer-contenido[b-kydvpxogke] {
+        grid-template-columns: 1fr;
     }
 }
 /* /Components/Layout/MainLayout.razor.rz.scp.css */
