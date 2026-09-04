@@ -616,7 +616,6 @@ C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedc
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedcss\bundle\NetflixHome.styles.css
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedcss\projectbundle\NetflixHome.bundle.scp.css
-C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\u0exjq232o-{0}-tcvh2l3fdd-tcvh2l3fdd.gz
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\2iz8ibqiio-{0}-povteelwky-povteelwky.gz
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\2dpapki7dh-{0}-a05lplwit5-a05lplwit5.gz
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\nvel9i20z8-{0}-t1cqhe9u97-t1cqhe9u97.gz
@@ -680,8 +679,6 @@ C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\Netflix
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\ref\NetflixHome.dll
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedcss\Cards\FilaColeccion.razor.rz.scp.css
 C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedcss\Components\Layout\Footer.razor.rz.scp.css
-C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\78kknmtyvb-{0}-fzl6n8v52o-fzl6n8v52o.gz
-C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\fpcxg2v3zv-{0}-fzl6n8v52o-fzl6n8v52o.gz
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\bin\Debug\net10.0\appsettings.json
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\bin\Debug\net10.0\NetflixHome.staticwebassets.runtime.json
@@ -916,3 +913,9 @@ C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\refin
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\NetflixHome.pdb
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\NetflixHome.genruntimeconfig.cache
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\ref\NetflixHome.dll
+C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedcss\Cards\TarjetaAuth.razor.rz.scp.css
+C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedcss\Components\Pages\MiLista.razor.rz.scp.css
+C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\scopedcss\Components\Pages\PeliculaDetalle.razor.rz.scp.css
+C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\u0exjq232o-{0}-fp3kjew3ge-fp3kjew3ge.gz
+C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\78kknmtyvb-{0}-pidmjcpnjr-pidmjcpnjr.gz
+C:\Users\Aprendiz\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\fpcxg2v3zv-{0}-pidmjcpnjr-pidmjcpnjr.gz

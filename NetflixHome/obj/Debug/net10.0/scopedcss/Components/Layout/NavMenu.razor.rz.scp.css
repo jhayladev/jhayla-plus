@@ -12,6 +12,12 @@
     background: linear-gradient(180deg, rgba(4,6,15,0.85) 0%, rgba(4,6,15,0) 100%);
     font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
 }
+.dplus-imagen-lupa[b-k3w2rsqd5o] {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    vertical-align: middle;
+}
 
 .dplus-navbar-izquierda[b-k3w2rsqd5o] {
     display: flex;

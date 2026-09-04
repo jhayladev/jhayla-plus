@@ -21,7 +21,14 @@
 			<input class="dplus-busqueda-input" type="text" placeholder="Buscar películas..."
 				   value="@textoBusqueda" @oninput="AlEscribir" @onkeyup="AlPresionarTecla" />
 			<button class="dplus-icono dplus-icono-buscar" type="button" title="Buscar" @onclick="AlternarBusqueda">
-				@(busquedaAbierta ? "✕" : "🔍")
+				@if (busquedaAbierta)
+				{
+					<span>✕</span>
+				}
+				else
+				{
+					<img src="https://images.emojiterra.com/openmoji/v17.0/512px/1f50e.png" alt="Buscar" class="dplus-imagen-lupa" />
+				}
 			</button>
 		</div>
 

@@ -1,30 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\",
+  "WorkspaceRootPath": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\peliculadetalle.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\peliculadetalle.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\peliculadetalle.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\peliculadetalle.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\milista.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\milista.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\milista.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\milista.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\jhayla-plus\\netflixhome\\cards\\listapeliculas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\cards\\listapeliculas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\cards\\listapeliculas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\windows 11\\source\\repos\\jhayla-plus\\netflixhome\\cards\\filacoleccion.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\iniciosesion.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\iniciosesion.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\cards\\filacoleccion.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\cards\\filacoleccion.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\peliculadetalle.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\peliculadetalle.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\peliculadetalle.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\peliculadetalle.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\milista.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\milista.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|c:\\users\\aprendiz\\source\\repos\\jhayla-plus\\netflixhome\\components\\pages\\milista.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{714F0759-00CD-3DBA-E825-0607FEE00E5E}|NetflixHome\\NetflixHome.csproj|solutionrelative:netflixhome\\components\\pages\\milista.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,80 +67,135 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PeliculaDetalle.razor.css",
-              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\PeliculaDetalle.razor.css",
-              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\PeliculaDetalle.razor.css",
-              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\PeliculaDetalle.razor.css",
-              "RelativeToolTip": "NetflixHome\\Components\\Pages\\PeliculaDetalle.razor.css",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFAAAAATAAAAAAAAAA==",
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeToolTip": "NetflixHome\\Components\\Layout\\NavMenu.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-04T10:52:21.995Z",
+              "WhenOpened": "2026-09-04T14:06:15.722Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PeliculaDetalle.razor",
-              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\PeliculaDetalle.razor",
-              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\PeliculaDetalle.razor",
-              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\PeliculaDetalle.razor",
-              "RelativeToolTip": "NetflixHome\\Components\\Pages\\PeliculaDetalle.razor",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAACQAAAAMAAAAAAAAAA==",
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "NetflixHome\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-04T10:52:07.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MiLista.razor.css",
-              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\MiLista.razor.css",
-              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\MiLista.razor.css",
-              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\MiLista.razor.css",
-              "RelativeToolTip": "NetflixHome\\Components\\Pages\\MiLista.razor.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-04T10:50:28.766Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MiLista.razor",
-              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\MiLista.razor",
-              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\MiLista.razor",
-              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\MiLista.razor",
-              "RelativeToolTip": "NetflixHome\\Components\\Pages\\MiLista.razor",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-04T10:49:43.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-04T14:04:12.989Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ListaPeliculas.razor",
-              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Cards\\ListaPeliculas.razor",
-              "RelativeDocumentMoniker": "NetflixHome\\Cards\\ListaPeliculas.razor",
-              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Cards\\ListaPeliculas.razor",
-              "RelativeToolTip": "NetflixHome\\Cards\\ListaPeliculas.razor",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAC4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-04T10:47:12.956Z",
-              "EditorCaption": ""
+              "Title": "Home.razor.css",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\Home.razor.css",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\Home.razor.css",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\Home.razor.css",
+              "RelativeToolTip": "NetflixHome\\Components\\Pages\\Home.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-09-04T14:03:34.22Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "FilaColeccion.razor",
-              "DocumentMoniker": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Cards\\FilaColeccion.razor",
-              "RelativeDocumentMoniker": "NetflixHome\\Cards\\FilaColeccion.razor",
-              "ToolTip": "C:\\Users\\Windows 11\\source\\repos\\jhayla-plus\\NetflixHome\\Cards\\FilaColeccion.razor",
-              "RelativeToolTip": "NetflixHome\\Cards\\FilaColeccion.razor",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADIAAAAMAAAAAAAAAA==",
+              "Title": "InicioSesion.razor",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\InicioSesion.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\InicioSesion.razor",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\InicioSesion.razor",
+              "RelativeToolTip": "NetflixHome\\Components\\Pages\\InicioSesion.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-04T10:46:49.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-04T14:00:33.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "NetflixHome\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-04T13:51:16.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PeliculaDetalle.razor",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\PeliculaDetalle.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\PeliculaDetalle.razor",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\PeliculaDetalle.razor",
+              "RelativeToolTip": "NetflixHome\\Components\\Pages\\PeliculaDetalle.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-04T10:52:07.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MiLista.razor.css",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\MiLista.razor.css",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\MiLista.razor.css",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\MiLista.razor.css",
+              "RelativeToolTip": "NetflixHome\\Components\\Pages\\MiLista.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-09-04T10:50:28.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MiLista.razor",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\MiLista.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\MiLista.razor",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\MiLista.razor",
+              "RelativeToolTip": "NetflixHome\\Components\\Pages\\MiLista.razor",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-04T10:49:43.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ListaPeliculas.razor",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Cards\\ListaPeliculas.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Cards\\ListaPeliculas.razor",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Cards\\ListaPeliculas.razor",
+              "RelativeToolTip": "NetflixHome\\Cards\\ListaPeliculas.razor",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-04T10:47:12.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PeliculaDetalle.razor.css",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\PeliculaDetalle.razor.css",
+              "RelativeDocumentMoniker": "NetflixHome\\Components\\Pages\\PeliculaDetalle.razor.css",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Components\\Pages\\PeliculaDetalle.razor.css",
+              "RelativeToolTip": "NetflixHome\\Components\\Pages\\PeliculaDetalle.razor.css",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-09-04T10:52:21.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FilaColeccion.razor",
+              "DocumentMoniker": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Cards\\FilaColeccion.razor",
+              "RelativeDocumentMoniker": "NetflixHome\\Cards\\FilaColeccion.razor",
+              "ToolTip": "C:\\Users\\Aprendiz\\source\\repos\\jhayla-plus\\NetflixHome\\Cards\\FilaColeccion.razor",
+              "RelativeToolTip": "NetflixHome\\Cards\\FilaColeccion.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-04T10:46:49.281Z"
             }
           ]
         }
