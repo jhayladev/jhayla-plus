@@ -36,7 +36,6 @@ else
 	[Parameter]
 	public List<Peliculas>? Peliculas { get; set; }
 
-	// Si es true, las cards de esta fila usan el diseño alterno (ver PeliculaCard.razor.css).
 	[Parameter]
 	public bool EstiloAlterno { get; set; }
 
@@ -46,8 +45,6 @@ else
 
 	protected override void OnInitialized()
 	{
-		// Si no se especifica una lista puntual, se usa el repositorio central
-		// (misma fuente de datos que usa el banner).
 		Peliculas ??= PeliculasRepository.Todas;
 	}
 }

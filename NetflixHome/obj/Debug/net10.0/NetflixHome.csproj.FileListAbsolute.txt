@@ -902,8 +902,8 @@ C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compr
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\b8ezqbst7j-{0}-abdmv1u4y3-abdmv1u4y3.gz
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\5rb1wermzn-{0}-wyu7y4jcvb-wyu7y4jcvb.gz
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\a0b9b6wrvl-{0}-wfr2hj6447-wfr2hj6447.gz
-C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\78kknmtyvb-{0}-aak9o3mziy-aak9o3mziy.gz
-C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\fpcxg2v3zv-{0}-aak9o3mziy-aak9o3mziy.gz
+C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\78kknmtyvb-{0}-kxitz57pzc-kxitz57pzc.gz
+C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\compressed\fpcxg2v3zv-{0}-kxitz57pzc-kxitz57pzc.gz
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\Windows 11\source\repos\jhayla-plus\NetflixHome\obj\Debug\net10.0\staticwebassets.development.json

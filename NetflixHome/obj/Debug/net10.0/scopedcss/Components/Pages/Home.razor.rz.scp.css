@@ -19,9 +19,15 @@
 
 .busqueda-grid[b-xdp5qi4igk] {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 1.6rem;
     justify-items: center;
+}
+
+@media (max-width: 640px) {
+    .busqueda-grid[b-xdp5qi4igk] {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
 
 .busqueda-vacia[b-xdp5qi4igk] {

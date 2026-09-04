@@ -30,7 +30,7 @@ else
 			<div class="fila-peliculas coleccion-cards">
 				@foreach (var pelicula in Peliculas)
 				{
-					<PeliculaCard Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"></PeliculaCard>
+					<PeliculaCard Id="@pelicula.Id" Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"></PeliculaCard>
 				}
 			</div>
 

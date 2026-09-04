@@ -5,7 +5,7 @@
 @inject FavoritosService Favoritos
 @inject NavigationManager Nav
 
-<div class="pelicula-card @(EstiloAlterno ? "pelicula-card--alt" : "")" @onclick="AbrirDetalle">
+<div class="pelicula-card @(EstiloAlterno ? "pelicula-card--alt" : "")" onclick="@AbrirDetalle">
 	<div class="pelicula-card-img-wrap">
 		<img src="@ImagenUrl" alt="@Titulo" loading="lazy"
 			 onerror="this.onerror=null;this.src='/images/susto.png';" />
@@ -17,7 +17,7 @@
 
 		<button class="card-mas @(agregada ? "card-mas--agregada" : "")" type="button"
 				title="@(agregada ? "Quitar de Mi Lista" : "Añadir a Mi Lista")"
-				@onclick="Agregar" @onclick:stopPropagation="true">
+				onclick="@Agregar">
 			@(agregada ? "✓" : "+")
 		</button>
 
@@ -44,7 +44,6 @@
 	[Parameter]
 	public int Year { get; set; }
 
-	// Cuando es true, se usa el diseño alterno (info siempre visible, sin depender de :hover).
 	[Parameter]
 	public bool EstiloAlterno { get; set; }
 
@@ -91,6 +90,13 @@
 
 	private void AbrirDetalle()
 	{
+		if (!Sesion.HaIniciadoSesion)
+		{
+			Toast.Mostrar("Inicia sesión para ver los detalles de esta película");
+			Nav.NavigateTo("/InicioSesion");
+			return;
+		}
+
 		Nav.NavigateTo($"/pelicula/{Id}");
 	}
 

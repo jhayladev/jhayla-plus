@@ -126,6 +126,13 @@ else
 
 	protected override async Task OnInitializedAsync()
 	{
+		if (!Sesion.HaIniciadoSesion)
+		{
+			Toast.Mostrar("Inicia sesión para ver los detalles de esta película");
+			Nav.NavigateTo("/InicioSesion");
+			return;
+		}
+
 		Favoritos.OnCambio += AlCambiarFavoritos;
 		await CargarAsync();
 	}

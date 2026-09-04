@@ -6,8 +6,6 @@
         public string? Titulo { get; set; }
         public string? ImagenUrl { get; set; }
         public int Year { get; set; }
-
-        // Datos ampliados para la vista de detalle (estilo "ficha de película").
         public string? Sinopsis { get; set; }
         public string? Duracion { get; set; }
         public string? Director { get; set; }

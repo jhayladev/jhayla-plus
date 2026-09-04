@@ -5,6 +5,7 @@
 @inject ToastService Toast
 @inject BusquedaService Busqueda
 @inject IJSRuntime JS
+@rendermode InteractiveServer
 
 @if (Todas is null)
 {
@@ -62,8 +63,6 @@ else
 
 	private List<Peliculas> Populares => Todas?.Take(7).ToList() ?? new();
 
-	// Si el catálogo tiene pocas películas, Skip(7) puede quedar vacío:
-	// en ese caso se usa el catálogo completo para no mostrar la fila vacía.
 	private List<Peliculas> Proximamente => Todas is null
 		? new List<Peliculas>()
 		: (Todas.Skip(7).Any() ? Todas.Skip(7).ToList() : Todas);
@@ -72,8 +71,7 @@ else
 		? new List<Peliculas>()
 		: Todas.AsEnumerable().Reverse().ToList();
 
-	// Fila intercalada entre las 2 colecciones: otro orden distinto
-	// para que no se repita tal cual con Populares/Recomendadas/Tendencias.
+
 	private List<Peliculas> MasParaVer => Todas is null
 		? new List<Peliculas>()
 		: Todas.Skip(3).Concat(Todas.Take(3)).ToList();
@@ -118,16 +116,16 @@ else
 		}
 	}
 
-	private bool suscrip;
+	public bool suscrip;
 
-	private void MostrarToastSuscripcion()
+	public void MostrarToastSuscripcion()
 	{
 		suscrip = !suscrip;
 		Toast.Mostrar(suscrip ? "Función Premium próximamente disponible" : "Podras suscribirte en 4 dias");
 	}
 
-	private bool repro;
-	private void MostrarToastReproducir()
+	public bool repro;
+	public void MostrarToastReproducir()
 	{
 		repro = !repro;
 		Toast.Mostrar(repro ? "Pronto podras reproducir esta Pelicula/Serie" : "Ten paciencia");
