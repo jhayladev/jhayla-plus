@@ -1,0 +1,198 @@
+﻿@page "/pelicula/{Id:int}"
+@using NetflixHome.ClassLogic
+@implements IDisposable
+@inject PeliculasApiClient ApiClient
+@inject ToastService Toast
+@inject SesionUsuario Sesion
+@inject FavoritosService Favoritos
+@inject NavigationManager Nav
+
+@if (pelicula is null && !cargando)
+{
+	<div class="detalle-no-encontrada">
+		<p>No pudimos encontrar esta película.</p>
+		<a class="detalle-volver-enlace" href="/">← Volver al inicio</a>
+	</div>
+}
+else if (pelicula is null)
+{
+	<p class="dplus-cargando">Cargando película...</p>
+}
+else
+{
+	<div class="detalle-hero" style="background-image: url('@pelicula.ImagenUrl')">
+		<div class="detalle-hero-sombra"></div>
+
+		<button class="detalle-volver" type="button" @onclick="Volver" title="Volver">← Volver</button>
+
+		<div class="detalle-hero-contenido">
+			<h1 class="detalle-titulo">@pelicula.Titulo</h1>
+			<p class="detalle-frase">@pelicula.Sinopsis</p>
+
+			<div class="detalle-acciones">
+				<button class="detalle-boton-play" type="button" @onclick="MostrarToastReproducir">
+					▶ Reproducir
+				</button>
+				<button class="detalle-boton-secundario" type="button" @onclick="MostrarToastTrailer">
+					Tráiler
+				</button>
+				<button class="detalle-boton-circular @(agregada ? "detalle-boton-circular--activo" : "")" type="button"
+						title="@(agregada ? "Quitar de Mi Lista" : "Añadir a Mi Lista")" @onclick="AlternarFavorito">
+					@(agregada ? "✓" : "+")
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="detalle-cuerpo">
+		<div class="detalle-tabs">
+			<button class="detalle-tab @(pestana == "sugeridas" ? "detalle-tab--activa" : "")" @onclick='() => pestana = "sugeridas"'>Sugeridas</button>
+			<button class="detalle-tab @(pestana == "extras" ? "detalle-tab--activa" : "")" @onclick='() => pestana = "extras"'>Extras</button>
+			<button class="detalle-tab @(pestana == "detalles" ? "detalle-tab--activa" : "")" @onclick='() => pestana = "detalles"'>Detalles</button>
+		</div>
+
+		@if (pestana == "detalles")
+		{
+			<div class="detalle-info">
+				<div class="detalle-info-principal">
+					<h2>@pelicula.Titulo</h2>
+					<p class="detalle-sinopsis">@(pelicula.Sinopsis ?? "Sinopsis no disponible por el momento.")</p>
+				</div>
+
+				<div class="detalle-info-columnas">
+					<div class="detalle-info-columna">
+						<div class="detalle-dato">
+							<span class="detalle-dato-etiqueta">Duración:</span>
+							<span class="detalle-dato-valor">@(pelicula.Duracion ?? "—")</span>
+						</div>
+						<div class="detalle-dato">
+							<span class="detalle-dato-etiqueta">Año de estreno:</span>
+							<span class="detalle-dato-valor">@pelicula.Year</span>
+						</div>
+						<div class="detalle-dato">
+							<span class="detalle-dato-etiqueta">Género:</span>
+							<span class="detalle-dato-valor">@(pelicula.Genero ?? "—")</span>
+						</div>
+						<div class="detalle-dato">
+							<span class="detalle-dato-etiqueta">Clasificación:</span>
+							<span class="detalle-dato-valor">@(pelicula.Clasificacion ?? "—")</span>
+						</div>
+					</div>
+					<div class="detalle-info-columna">
+						<div class="detalle-dato">
+							<span class="detalle-dato-etiqueta">Director:</span>
+							<span class="detalle-dato-valor">@(pelicula.Director ?? "—")</span>
+						</div>
+						<div class="detalle-dato">
+							<span class="detalle-dato-etiqueta">Reparto:</span>
+							<span class="detalle-dato-valor">@(pelicula.Reparto ?? "—")</span>
+						</div>
+					</div>
+				</div>
+
+				@if (!string.IsNullOrWhiteSpace(pelicula.Formatos))
+				{
+					<div class="detalle-formatos">
+						<span class="detalle-dato-etiqueta">Disponible en los siguientes formatos:</span>
+						<div class="detalle-formatos-badges">
+							@foreach (var formato in pelicula.Formatos.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
+							{
+								<span class="detalle-formato-badge">@formato</span>
+							}
+						</div>
+					</div>
+				}
+			</div>
+		}
+		else if (pestana == "sugeridas")
+		{
+			<p class="detalle-tab-vacia">Muy pronto vas a poder ver aquí sugerencias relacionadas con esta película.</p>
+		}
+		else
+		{
+			<p class="detalle-tab-vacia">Aún no hay contenido extra disponible para esta película.</p>
+		}
+	</div>
+}
+
+@code {
+	[Parameter]
+	public int Id { get; set; }
+
+	private Peliculas? pelicula;
+	private bool cargando = true;
+	private string pestana = "detalles";
+	private bool agregada;
+
+	protected override async Task OnInitializedAsync()
+	{
+		Favoritos.OnCambio += AlCambiarFavoritos;
+		await CargarAsync();
+	}
+
+	protected override async Task OnParametersSetAsync()
+	{
+		if (pelicula is not null && pelicula.Id != Id)
+		{
+			await CargarAsync();
+		}
+	}
+
+	private async Task CargarAsync()
+	{
+		cargando = true;
+		pelicula = await ApiClient.ObtenerPorIdAsync(Id);
+		agregada = Favoritos.EsFavorita(Id);
+		cargando = false;
+	}
+
+	private void AlCambiarFavoritos()
+	{
+		agregada = Favoritos.EsFavorita(Id);
+		InvokeAsync(StateHasChanged);
+	}
+
+	private async Task AlternarFavorito()
+	{
+		if (!Sesion.HaIniciadoSesion)
+		{
+			Toast.Mostrar("Inicia sesión para guardar películas en Mi Lista");
+			Nav.NavigateTo("/InicioSesion");
+			return;
+		}
+
+		var exito = await Favoritos.AlternarAsync(Id);
+		if (!exito)
+		{
+			Toast.Mostrar("No se pudo actualizar Mi Lista. Intenta de nuevo.");
+			return;
+		}
+
+		agregada = Favoritos.EsFavorita(Id);
+		Toast.Mostrar(agregada ? "Agregada a Mi Lista correctamente" : "Removida de Mi Lista correctamente");
+	}
+
+	private bool aviso;
+	private void MostrarToastReproducir()
+	{
+		aviso = !aviso;
+		Toast.Mostrar(aviso ? "Pronto podrás reproducir esta película" : "Ten paciencia");
+	}
+
+	private bool avisoTrailer;
+	private void MostrarToastTrailer()
+	{
+		avisoTrailer = !avisoTrailer;
+		Toast.Mostrar("Tráiler próximamente disponible");
+	}
+
+	private void Volver()
+	{
+		Nav.NavigateTo("/");
+	}
+
+	public void Dispose()
+	{
+		Favoritos.OnCambio -= AlCambiarFavoritos;
+	}
+}

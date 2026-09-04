@@ -1,12 +1,38 @@
 @page "/"
 @using NetflixHome.ClassLogic
+@implements IDisposable
 @inject PeliculasApiClient ApiClient
 @inject ToastService Toast
+@inject BusquedaService Busqueda
 @inject IJSRuntime JS
 
 @if (Todas is null)
 {
 	<p class="dplus-cargando">Cargando catálogo...</p>
+}
+else if (!string.IsNullOrWhiteSpace(textoBusqueda))
+{
+	<div class="dplus-resultados-busqueda">
+		@if (Resultados.Count == 0)
+		{
+			<div class="busqueda-vacia">
+				<span class="busqueda-vacia-icono">🔍</span>
+				<h2>No encontramos resultados para "@textoBusqueda"</h2>
+				<p>Prueba con otro título, o revisa que esté bien escrito.</p>
+			</div>
+		}
+		else
+		{
+			<h2 class="busqueda-titulo">Resultados para "@textoBusqueda"</h2>
+			<div class="busqueda-grid">
+				@foreach (var pelicula in Resultados)
+				{
+					<PeliculaCard Id="@pelicula.Id" Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl"
+								  Year="@pelicula.Year" Etiqueta="@pelicula.Etiqueta" />
+				}
+			</div>
+		}
+	</div>
 }
 else
 {
@@ -60,9 +86,28 @@ else
 
 	private Peliculas? Destacada => Todas?.FirstOrDefault(p => p.Id == 2) ?? Todas?.FirstOrDefault();
 
+	private string textoBusqueda = string.Empty;
+
+	private List<Peliculas> Resultados => Todas is null
+		? new()
+		: Todas.Where(p => (p.Titulo ?? string.Empty).Contains(textoBusqueda, StringComparison.OrdinalIgnoreCase)).ToList();
+
 	protected override async Task OnInitializedAsync()
 	{
 		Todas = await ApiClient.ObtenerTodasAsync();
+		textoBusqueda = Busqueda.Texto;
+		Busqueda.OnBuscar += AlBuscar;
+	}
+
+	private void AlBuscar(string texto)
+	{
+		textoBusqueda = texto;
+		InvokeAsync(StateHasChanged);
+	}
+
+	public void Dispose()
+	{
+		Busqueda.OnBuscar -= AlBuscar;
 	}
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)

@@ -42,6 +42,9 @@ using (var scope = app.Services.CreateScope())
     {
         var context = services.GetRequiredService<PeliculasDbContext>();
         context.Database.Migrate(); // Aplica InitialCreate y SeedPeliculasData en SQL Server
+
+        var usuariosContext = services.GetRequiredService<UsuariosDbContext>();
+        usuariosContext.Database.Migrate(); // Aplica la migración UsuariosDb (tabla + usuarios de prueba)
     }
     catch (Exception ex)
     {

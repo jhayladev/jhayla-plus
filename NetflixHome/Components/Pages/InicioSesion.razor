@@ -1,8 +1,97 @@
 ﻿@page "/InicioSesion"
-<div class="div-login">
-	<h3>Jhayla+ - Inicio Sesion</h3>
-</div>
+@using NetflixHome.ClassLogic
+@inject UsuariosApiClient ApiClient
+@inject SesionUsuario Sesion
+@inject ToastService Toast
+@inject NavigationManager Nav
+
+<TarjetaAuth Titulo="Bienvenido a Jhayla+"
+			 Subtitulo="Tu acceso a un entretenimiento divertido y sin límites. ¡Comencemos!">
+	<Cuerpo>
+		@if (!string.IsNullOrEmpty(errorMensaje))
+		{
+			<div class="auth-error">@errorMensaje</div>
+		}
+
+		<div class="auth-campo">
+			<div class="auth-etiqueta-fila">
+				<label class="auth-etiqueta" for="correo">Correo electrónico</label>
+			</div>
+			<div class="auth-input-envoltura">
+				<span class="auth-icono-campo">✉️</span>
+				<input id="correo" class="auth-input" placeholder="hello@example.com"
+					   @bind="correo" @bind:event="oninput" @onkeyup="AlPresionarTecla" />
+			</div>
+		</div>
+
+		<div class="auth-campo">
+			<div class="auth-etiqueta-fila">
+				<label class="auth-etiqueta" for="contrasena">Contraseña</label>
+				<button type="button" class="auth-olvido" @onclick="MostrarToastOlvido">¿Olvidó su contraseña?</button>
+			</div>
+			<div class="auth-input-envoltura">
+				<span class="auth-icono-campo">🔒</span>
+				<input id="contrasena" type="password" class="auth-input" placeholder="••••••••"
+					   @bind="contraseña" @bind:event="oninput" @onkeyup="AlPresionarTecla" />
+			</div>
+		</div>
+
+		<button class="auth-boton" type="button" disabled="@cargando" @onclick="IniciarSesionAsync">
+			@(cargando ? "Ingresando..." : "Iniciar sesión")
+			@if (!cargando)
+			{
+				<span>→</span>
+			}
+		</button>
+	</Cuerpo>
+	<PieDePagina>
+		<span>¿No tienes cuenta? <a class="auth-enlace" href="/Registro">Regístrate</a></span>
+	</PieDePagina>
+</TarjetaAuth>
 
 @code {
+	private string correo = string.Empty;
+	private string contraseña = string.Empty;
+	private bool cargando;
+	private string? errorMensaje;
 
+	private async Task AlPresionarTecla(KeyboardEventArgs e)
+	{
+		if (e.Key == "Enter")
+		{
+			await IniciarSesionAsync();
+		}
+	}
+
+	private async Task IniciarSesionAsync()
+	{
+		if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contraseña))
+		{
+			errorMensaje = "Completa tu correo y contraseña para continuar.";
+			return;
+		}
+
+		cargando = true;
+		errorMensaje = null;
+
+		var resultado = await ApiClient.IniciarSesionAsync(correo, contraseña);
+
+		cargando = false;
+
+		if (resultado.Exitoso && resultado.Usuario is not null)
+		{
+			Sesion.IniciarSesion(resultado.Usuario);
+			Toast.Mostrar($"¡Bienvenido, {resultado.Usuario.Nombre}!");
+			Nav.NavigateTo("/");
+		}
+		else
+		{
+			errorMensaje = resultado.Mensaje ?? "Correo o contraseña incorrectos.";
+		}
+	}
+
+	private void MostrarToastOlvido()
+	{
+		Toast.Mostrar("Aún no tenemos recuperación automática. Escríbenos por WhatsApp o correo (pie de página) y te ayudamos.");
+	}
 }

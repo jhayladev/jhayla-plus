@@ -94,6 +94,57 @@
     text-decoration: none;
 }
 
+.dplus-busqueda[b-k3w2rsqd5o] {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+}
+
+.dplus-icono-buscar[b-k3w2rsqd5o] {
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    padding: 0;
+}
+
+.dplus-busqueda-input[b-k3w2rsqd5o] {
+    width: 0;
+    opacity: 0;
+    padding: 0.35rem 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.85rem;
+    transition: width 0.2s ease, opacity 0.2s ease, padding 0.2s ease;
+    pointer-events: none;
+}
+
+    .dplus-busqueda-input[b-k3w2rsqd5o]::placeholder {
+        color: #cfd3dc;
+    }
+
+    .dplus-busqueda-input:focus[b-k3w2rsqd5o] {
+        outline: none;
+        border-bottom-color: #1cd2e5;
+    }
+
+.dplus-busqueda-abierta .dplus-busqueda-input[b-k3w2rsqd5o] {
+    width: 11rem;
+    opacity: 1;
+    padding: 0.35rem 0.1rem;
+    pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+    .dplus-busqueda-abierta .dplus-busqueda-input[b-k3w2rsqd5o] {
+        width: 7rem;
+    }
+}
+
 .dplus-btn-login[b-k3w2rsqd5o] {
     background: #ffffff;
     color: #04060f;
@@ -112,6 +163,137 @@
         opacity: 0.92;
         box-shadow: 0 4px 16px rgba(229, 9, 20, 0.35);
         text-decoration: none;
+    }
+
+/* ===== Cuenta: avatar con inicial + menú desplegable, reemplaza al botón
+   "Iniciar sesión" apenas hay una sesión activa. ===== */
+.dplus-cuenta[b-k3w2rsqd5o] {
+    position: relative;
+}
+
+.dplus-avatar-boton[b-k3w2rsqd5o] {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.dplus-avatar[b-k3w2rsqd5o] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1cd2e5 0%, #6c4cf1 55%, #e50914 100%);
+    color: #04060f;
+    font-weight: 800;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+.dplus-avatar-flecha[b-k3w2rsqd5o] {
+    color: #cfd3dc;
+    font-size: 0.55rem;
+}
+
+.dplus-menu-cuenta[b-k3w2rsqd5o] {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    width: 240px;
+    background: rgba(14, 16, 26, 0.95);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    padding: 0.9rem;
+    z-index: 200;
+    animation: dplus-menu-aparecer-b-k3w2rsqd5o 0.16s ease;
+}
+
+@keyframes dplus-menu-aparecer-b-k3w2rsqd5o {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dplus-menu-encabezado[b-k3w2rsqd5o] {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dplus-avatar-grande[b-k3w2rsqd5o] {
+    width: 42px;
+    height: 42px;
+    font-size: 1.05rem;
+}
+
+.dplus-menu-nombre[b-k3w2rsqd5o] {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.dplus-menu-correo[b-k3w2rsqd5o] {
+    color: #8a8f9e;
+    font-size: 0.72rem;
+    margin: 0;
+    line-height: 1.3;
+    word-break: break-all;
+}
+
+.dplus-menu-item[b-k3w2rsqd5o] {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    text-align: left;
+    color: #cfd3dc;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.6rem 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+    .dplus-menu-item:hover[b-k3w2rsqd5o] {
+        background: rgba(255, 255, 255, 0.06);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+.dplus-menu-item-salir[b-k3w2rsqd5o] {
+    color: #ff8288;
+}
+
+    .dplus-menu-item-salir:hover[b-k3w2rsqd5o] {
+        background: rgba(229, 9, 20, 0.12);
+        color: #ff8288;
     }
 
 .navbar-toggler[b-k3w2rsqd5o] {

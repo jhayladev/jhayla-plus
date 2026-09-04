@@ -1,0 +1,73 @@
+﻿@page "/mi-lista"
+@using NetflixHome.ClassLogic
+@implements IDisposable
+@inject FavoritosService Favoritos
+@inject SesionUsuario Sesion
+
+<div class="milista-pagina">
+	<h1 class="milista-titulo">Mi Lista</h1>
+
+	@if (!Sesion.HaIniciadoSesion)
+	{
+		<div class="milista-vacia">
+			<p>Inicia sesión para ver y guardar tus películas favoritas.</p>
+			<a class="milista-boton" href="/InicioSesion">Iniciar sesión</a>
+		</div>
+	}
+	else if (cargando)
+	{
+		<p class="dplus-cargando">Cargando tu lista...</p>
+	}
+	else if (peliculas.Count == 0)
+	{
+		<div class="milista-vacia">
+			<p>Aún no has agregado películas a tu lista.</p>
+			<p class="milista-vacia-sugerencia">Toca el botón "+" en cualquier tarjeta para guardarla aquí.</p>
+			<a class="milista-boton" href="/">Explorar catálogo</a>
+		</div>
+	}
+	else
+	{
+		<div class="milista-grid">
+			@foreach (var pelicula in peliculas)
+			{
+				<PeliculaCard Id="@pelicula.Id" Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year" />
+			}
+		</div>
+	}
+</div>
+
+@code {
+	private List<Peliculas> peliculas = new();
+	private bool cargando = true;
+
+	protected override async Task OnInitializedAsync()
+	{
+		Favoritos.OnCambio += AlCambiarFavoritos;
+		await CargarAsync();
+	}
+
+	private async Task CargarAsync()
+	{
+		if (!Sesion.HaIniciadoSesion)
+		{
+			cargando = false;
+			return;
+		}
+
+		cargando = true;
+		peliculas = await Favoritos.ObtenerListaCompletaAsync();
+		cargando = false;
+	}
+
+	private async void AlCambiarFavoritos()
+	{
+		await CargarAsync();
+		await InvokeAsync(StateHasChanged);
+	}
+
+	public void Dispose()
+	{
+		Favoritos.OnCambio -= AlCambiarFavoritos;
+	}
+}

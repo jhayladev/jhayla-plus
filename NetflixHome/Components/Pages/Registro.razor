@@ -1,0 +1,121 @@
+﻿@page "/Registro"
+@using NetflixHome.ClassLogic
+@inject UsuariosApiClient ApiClient
+@inject SesionUsuario Sesion
+@inject ToastService Toast
+@inject NavigationManager Nav
+
+<TarjetaAuth Titulo="Crea tu cuenta en Jhayla+"
+			 Subtitulo="Regístrate y empieza a disfrutar de todo el catálogo hoy mismo.">
+	<Cuerpo>
+		@if (!string.IsNullOrEmpty(errorMensaje))
+		{
+			<div class="auth-error">@errorMensaje</div>
+		}
+
+		<div class="auth-campo">
+			<div class="auth-etiqueta-fila">
+				<label class="auth-etiqueta" for="nombre">Nombre</label>
+			</div>
+			<div class="auth-input-envoltura">
+				<span class="auth-icono-campo">🙂</span>
+				<input id="nombre" class="auth-input" placeholder="Tu nombre" @bind="nombre" @bind:event="oninput" />
+			</div>
+		</div>
+
+		<div class="auth-campo">
+			<div class="auth-etiqueta-fila">
+				<label class="auth-etiqueta" for="apellido">Apellido</label>
+			</div>
+			<div class="auth-input-envoltura">
+				<span class="auth-icono-campo">🙂</span>
+				<input id="apellido" class="auth-input" placeholder="Tu apellido" @bind="apellido" @bind:event="oninput" />
+			</div>
+		</div>
+
+		<div class="auth-campo">
+			<div class="auth-etiqueta-fila">
+				<label class="auth-etiqueta" for="correo">Correo electrónico</label>
+			</div>
+			<div class="auth-input-envoltura">
+				<span class="auth-icono-campo">✉️</span>
+				<input id="correo" class="auth-input" placeholder="hello@example.com" @bind="correo" @bind:event="oninput" />
+			</div>
+		</div>
+
+		<div class="auth-campo">
+			<div class="auth-etiqueta-fila">
+				<label class="auth-etiqueta" for="contrasena">Contraseña</label>
+			</div>
+			<div class="auth-input-envoltura">
+				<span class="auth-icono-campo">🔒</span>
+				<input id="contrasena" type="password" class="auth-input" placeholder="••••••••" @bind="contraseña" @bind:event="oninput" />
+			</div>
+		</div>
+
+		<div class="auth-campo">
+			<div class="auth-etiqueta-fila">
+				<label class="auth-etiqueta" for="confirmar">Confirmar contraseña</label>
+			</div>
+			<div class="auth-input-envoltura">
+				<span class="auth-icono-campo">🔒</span>
+				<input id="confirmar" type="password" class="auth-input" placeholder="••••••••" @bind="confirmarContraseña" @bind:event="oninput" />
+			</div>
+		</div>
+
+		<button class="auth-boton" type="button" disabled="@cargando" @onclick="RegistrarAsync">
+			@(cargando ? "Creando cuenta..." : "Crear cuenta")
+			@if (!cargando)
+			{
+				<span>→</span>
+			}
+		</button>
+	</Cuerpo>
+	<PieDePagina>
+		<span>¿Ya tienes cuenta? <a class="auth-enlace" href="/InicioSesion">Inicia sesión</a></span>
+	</PieDePagina>
+</TarjetaAuth>
+
+@code {
+	private string nombre = string.Empty;
+	private string apellido = string.Empty;
+	private string correo = string.Empty;
+	private string contraseña = string.Empty;
+	private string confirmarContraseña = string.Empty;
+	private bool cargando;
+	private string? errorMensaje;
+
+	private async Task RegistrarAsync()
+	{
+		if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) ||
+			string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contraseña))
+		{
+			errorMensaje = "Completa todos los campos para crear tu cuenta.";
+			return;
+		}
+
+		if (contraseña != confirmarContraseña)
+		{
+			errorMensaje = "Las contraseñas no coinciden.";
+			return;
+		}
+
+		cargando = true;
+		errorMensaje = null;
+
+		var resultado = await ApiClient.RegistrarAsync(nombre, apellido, correo, contraseña);
+
+		cargando = false;
+
+		if (resultado.Exitoso && resultado.Usuario is not null)
+		{
+			Sesion.IniciarSesion(resultado.Usuario);
+			Toast.Mostrar($"¡Cuenta creada! Bienvenido, {resultado.Usuario.Nombre}!");
+			Nav.NavigateTo("/");
+		}
+		else
+		{
+			errorMensaje = resultado.Mensaje ?? "No se pudo crear la cuenta. Intenta de nuevo.";
+		}
+	}
+}

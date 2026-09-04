@@ -16,6 +16,11 @@ builder.Services.AddHttpClient("JhaylaPlusAPI", client =>
 
 builder.Services.AddScoped<PeliculasApiClient>();
 builder.Services.AddScoped<ToastService>();
+builder.Services.AddScoped<UsuariosApiClient>();
+builder.Services.AddScoped<SesionUsuario>();
+builder.Services.AddScoped<BusquedaService>();
+builder.Services.AddScoped<FavoritosApiClient>();
+builder.Services.AddScoped<FavoritosService>();
 
 var app = builder.Build();
 

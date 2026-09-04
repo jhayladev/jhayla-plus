@@ -1,4 +1,5 @@
-﻿<div class="dplus-navbar">
+﻿@implements IDisposable
+<div class="dplus-navbar">
 	<div class="dplus-navbar-izquierda">
 		<a class="dplus-logo" href="/">
 			Jhayla<span class="dplus-logo-signo">+</span>
@@ -11,19 +12,132 @@
 			<span class="dplus-link dplus-link-estatico">Series</span>
 			<span class="dplus-link dplus-link-estatico">Películas</span>
 			<span class="dplus-link dplus-link-estatico">Originales</span>
-			<span class="dplus-link dplus-link-estatico">Mi Lista</span>
+			<NavLink class="dplus-link" href="/mi-lista">Mi Lista</NavLink>
 		</nav>
 	</div>
 
 	<div class="dplus-navbar-derecha">
-		<span class="dplus-icono" title="Buscar"> Busca Aqui 🔍</span>
-		<NavLink class="dplus-link" href="/InicioSesion" Match="NavLinkMatch.Prefix"> 
-			<button class="dplus-btn-login" type="button">Iniciar sesión</button>
-		</NavLink>
+		<div class="dplus-busqueda @(busquedaAbierta ? "dplus-busqueda-abierta" : "")">
+			<input class="dplus-busqueda-input" type="text" placeholder="Buscar películas..."
+				   value="@textoBusqueda" @oninput="AlEscribir" @onkeyup="AlPresionarTecla" />
+			<button class="dplus-icono dplus-icono-buscar" type="button" title="Buscar" @onclick="AlternarBusqueda">
+				@(busquedaAbierta ? "✕" : "🔍")
+			</button>
+		</div>
+
+		@if (Sesion.HaIniciadoSesion && Sesion.UsuarioActual is not null)
+		{
+			<div class="dplus-cuenta @(menuAbierto ? "dplus-cuenta-abierta" : "")">
+				<button class="dplus-avatar-boton" type="button" @onclick="AlternarMenu" title="Mi cuenta">
+					<span class="dplus-avatar">@Inicial</span>
+					<span class="dplus-avatar-flecha">@(menuAbierto ? "▲" : "▼")</span>
+				</button>
+
+				@if (menuAbierto)
+				{
+					<div class="dplus-menu-cuenta">
+						<div class="dplus-menu-encabezado">
+							<span class="dplus-avatar dplus-avatar-grande">@Inicial</span>
+							<div>
+								<p class="dplus-menu-nombre">@Sesion.UsuarioActual.Nombre @Sesion.UsuarioActual.Apellido</p>
+								<p class="dplus-menu-correo">@Sesion.UsuarioActual.Correo</p>
+							</div>
+						</div>
+						<a class="dplus-menu-item" href="/mi-lista" @onclick="CerrarMenu">🎬 Mi Lista</a>
+						<button class="dplus-menu-item dplus-menu-item-salir" type="button" @onclick="CerrarSesionAsync">↩ Cerrar sesión</button>
+					</div>
+				}
+			</div>
+		}
+		else
+		{
+			<NavLink class="dplus-link" href="/InicioSesion" Match="NavLinkMatch.Prefix">
+				<button class="dplus-btn-login" type="button">Iniciar sesión</button>
+			</NavLink>
+		}
 	</div>
 </div>
 
 
 @code{
+	[Inject] private BusquedaService Busqueda { get; set; } = default!;
+	[Inject] private NavigationManager Nav { get; set; } = default!;
+	[Inject] private SesionUsuario Sesion { get; set; } = default!;
+	[Inject] private ToastService Toast { get; set; } = default!;
 
+	private bool busquedaAbierta;
+	private string textoBusqueda = string.Empty;
+	private bool menuAbierto;
+
+	private string Inicial => string.IsNullOrWhiteSpace(Sesion.UsuarioActual?.Nombre)
+		? "?"
+		: Sesion.UsuarioActual!.Nombre![0].ToString().ToUpperInvariant();
+
+	protected override void OnInitialized()
+	{
+		Sesion.OnCambio += AlCambiarSesion;
+	}
+
+	private void AlCambiarSesion()
+	{
+		menuAbierto = false;
+		InvokeAsync(StateHasChanged);
+	}
+
+	private void AlternarMenu()
+	{
+		menuAbierto = !menuAbierto;
+	}
+
+	private void CerrarMenu()
+	{
+		menuAbierto = false;
+	}
+
+	private async Task CerrarSesionAsync()
+	{
+		menuAbierto = false;
+		Sesion.CerrarSesion();
+		Toast.Mostrar("Sesión cerrada. ¡Vuelve pronto!");
+		Nav.NavigateTo("/");
+		await Task.CompletedTask;
+	}
+
+	private void AlternarBusqueda()
+	{
+		busquedaAbierta = !busquedaAbierta;
+		if (!busquedaAbierta)
+		{
+			textoBusqueda = string.Empty;
+			Busqueda.Buscar(string.Empty);
+		}
+	}
+
+	private void AlEscribir(ChangeEventArgs e)
+	{
+		textoBusqueda = e.Value?.ToString() ?? string.Empty;
+		Busqueda.Buscar(textoBusqueda);
+
+		// Si no estamos en el inicio (donde se muestra el catálogo), navega para ver los resultados.
+		var rutaActual = new Uri(Nav.Uri).AbsolutePath;
+		if (!string.IsNullOrEmpty(textoBusqueda) && rutaActual != "/")
+		{
+			Nav.NavigateTo("/");
+		}
+	}
+
+	private void AlPresionarTecla(KeyboardEventArgs e)
+	{
+		if (e.Key == "Escape")
+		{
+			busquedaAbierta = false;
+			textoBusqueda = string.Empty;
+			Busqueda.Buscar(string.Empty);
+		}
+	}
+
+	public void Dispose()
+	{
+		Sesion.OnCambio -= AlCambiarSesion;
+	}
 }

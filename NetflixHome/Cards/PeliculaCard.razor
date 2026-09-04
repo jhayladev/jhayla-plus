@@ -1,7 +1,11 @@
 @using NetflixHome.ClassLogic
+@implements IDisposable
 @inject ToastService Toast
+@inject SesionUsuario Sesion
+@inject FavoritosService Favoritos
+@inject NavigationManager Nav
 
-<div class="pelicula-card @(EstiloAlterno ? "pelicula-card--alt" : "")">
+<div class="pelicula-card @(EstiloAlterno ? "pelicula-card--alt" : "")" @onclick="AbrirDetalle">
 	<div class="pelicula-card-img-wrap">
 		<img src="@ImagenUrl" alt="@Titulo" loading="lazy"
 			 onerror="this.onerror=null;this.src='/images/susto.png';" />
@@ -12,8 +16,8 @@
 		}
 
 		<button class="card-mas @(agregada ? "card-mas--agregada" : "")" type="button"
-				title="@(agregada ? "Agregada a Mi Lista" : "Añadir a Mi Lista")"
-				onclick="@Agregar">
+				title="@(agregada ? "Quitar de Mi Lista" : "Añadir a Mi Lista")"
+				@onclick="Agregar" @onclick:stopPropagation="true">
 			@(agregada ? "✓" : "+")
 		</button>
 
@@ -27,6 +31,9 @@
 </div>
 
 @code {
+
+	[Parameter]
+	public int Id { get; set; }
 
 	[Parameter]
 	public string? Titulo { get; set; }
@@ -44,12 +51,51 @@
 	[Parameter]
 	public string? Etiqueta { get; set; }
 
-
 	private bool agregada;
 
-	private void Agregar()
+	protected override void OnInitialized()
 	{
-		agregada = !agregada;
-		Toast.Mostrar(agregada ? "Agregada a tu lista correctamente" : "Removida de tu lista correctamente");
+		agregada = Favoritos.EsFavorita(Id);
+		Favoritos.OnCambio += AlCambiarFavoritos;
+	}
+
+	private void AlCambiarFavoritos()
+	{
+		var nuevoEstado = Favoritos.EsFavorita(Id);
+		if (nuevoEstado != agregada)
+		{
+			agregada = nuevoEstado;
+			InvokeAsync(StateHasChanged);
+		}
+	}
+
+	private async Task Agregar()
+	{
+		if (!Sesion.HaIniciadoSesion)
+		{
+			Toast.Mostrar("Inicia sesión para guardar películas en Mi Lista");
+			Nav.NavigateTo("/InicioSesion");
+			return;
+		}
+
+		var exito = await Favoritos.AlternarAsync(Id);
+		if (!exito)
+		{
+			Toast.Mostrar("No se pudo actualizar Mi Lista. Intenta de nuevo.");
+			return;
+		}
+
+		agregada = Favoritos.EsFavorita(Id);
+		Toast.Mostrar(agregada ? "Agregada a Mi Lista correctamente" : "Removida de Mi Lista correctamente");
+	}
+
+	private void AbrirDetalle()
+	{
+		Nav.NavigateTo($"/pelicula/{Id}");
+	}
+
+	public void Dispose()
+	{
+		Favoritos.OnCambio -= AlCambiarFavoritos;
 	}
 }

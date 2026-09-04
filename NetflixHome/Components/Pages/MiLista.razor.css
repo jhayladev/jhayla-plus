@@ -1,0 +1,57 @@
+.milista-pagina {
+    padding: 6.5rem 4% 4rem;
+    min-height: 100vh;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.milista-titulo {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0 0 1.8rem;
+}
+
+.milista-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.6rem;
+    justify-items: center;
+}
+
+.milista-vacia {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: #cfd3dc;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 2.2rem 2rem;
+    max-width: 460px;
+}
+
+.milista-vacia-sugerencia {
+    color: #8a8f9e;
+    font-size: 0.82rem;
+    margin: 0;
+}
+
+.milista-boton {
+    margin-top: 0.8rem;
+    display: inline-block;
+    background: linear-gradient(90deg, #e50914, #c40812);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 30px;
+    transition: box-shadow 0.15s ease;
+}
+
+    .milista-boton:hover {
+        box-shadow: 0 8px 22px rgba(229, 9, 20, 0.4);
+        text-decoration: none;
+    }

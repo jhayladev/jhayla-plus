@@ -61,3 +61,132 @@ h1:focus {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
+/* ============================================================
+   Estilos compartidos de InicioSesion.razor y Registro.razor.
+   Van aquí (globales) y no en un .razor.css para que ambas
+   páginas usen exactamente el mismo diseño sin duplicar CSS.
+   ============================================================ */
+.auth-campo {
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+
+.auth-etiqueta-fila {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+.auth-etiqueta {
+    color: #cfd3dc;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.auth-olvido {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #1cd2e5;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+    .auth-olvido:hover {
+        text-decoration: underline;
+    }
+
+.auth-input-envoltura {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.auth-icono-campo {
+    position: absolute;
+    left: 0.9rem;
+    opacity: 0.55;
+    font-size: 0.95rem;
+    pointer-events: none;
+}
+
+.auth-input {
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    padding: 0.75rem 0.9rem 0.75rem 2.35rem;
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-family: inherit;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+    .auth-input::placeholder {
+        color: #6b7080;
+    }
+
+    .auth-input:focus {
+        outline: none;
+        border-color: #1cd2e5;
+        background: rgba(255, 255, 255, 0.09);
+    }
+
+.auth-error {
+    background: rgba(229, 9, 20, 0.12);
+    border: 1px solid rgba(229, 9, 20, 0.35);
+    color: #ff8288;
+    font-size: 0.82rem;
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 1.1rem;
+    text-align: center;
+}
+
+.auth-boton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(90deg, #e50914, #c40812);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 0.4rem;
+    transition: opacity 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+    .auth-boton:hover:not(:disabled) {
+        box-shadow: 0 8px 22px rgba(229, 9, 20, 0.4);
+    }
+
+    .auth-boton:active:not(:disabled) {
+        transform: scale(0.99);
+    }
+
+    .auth-boton:disabled {
+        opacity: 0.65;
+        cursor: default;
+    }
+
+.auth-enlace {
+    color: #1cd2e5;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    .auth-enlace:hover {
+        text-decoration: underline;
+    }

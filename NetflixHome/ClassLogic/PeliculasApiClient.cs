@@ -30,5 +30,23 @@ namespace NetflixHome.ClassLogic
 
             return PeliculasRepository.Todas;
         }
+
+        public async Task<Peliculas?> ObtenerPorIdAsync(int id)
+        {
+            try
+            {
+                var pelicula = await _http.GetFromJsonAsync<Peliculas>($"api/peliculas/{id}");
+                if (pelicula is not null)
+                {
+                    return pelicula;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "No se pudo obtener la película {Id} desde JhaylaPlusAPI, se usará el catálogo local de respaldo.", id);
+            }
+
+            return PeliculasRepository.Todas.FirstOrDefault(p => p.Id == id);
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace JhaylaPlusAPI.Models
     public class UsuariosDbContext : DbContext
     {
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Favorito> Favoritos { get; set; }
 
         public UsuariosDbContext(DbContextOptions<UsuariosDbContext> options)
             : base(options)
@@ -15,6 +16,11 @@ namespace JhaylaPlusAPI.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Un usuario no puede tener la misma película repetida en su lista.
+            modelBuilder.Entity<Favorito>()
+                .HasIndex(f => new { f.UsuarioId, f.PeliculaId })
+                .IsUnique();
 
             modelBuilder.Entity<Usuarios>().HasData(
 

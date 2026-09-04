@@ -16,8 +16,8 @@ else
 			<div class="fila-peliculas">
 				@foreach (var pelicula in Peliculas)
 				{
-					<PeliculaCard Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"
-								  EstiloAlterno="@EstiloAlterno" Etiqueta="@Etiqueta"></PeliculaCard>
+					<PeliculaCard Id="@pelicula.Id" Titulo="@pelicula.Titulo" ImagenUrl="@pelicula.ImagenUrl" Year="@pelicula.Year"
+								  EstiloAlterno="@EstiloAlterno" Etiqueta="@(Etiqueta ?? pelicula.Etiqueta)"></PeliculaCard>
 				}
 			</div>
 			<div class="fila-fade-derecha">

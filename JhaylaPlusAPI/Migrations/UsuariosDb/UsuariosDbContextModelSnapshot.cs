@@ -21,6 +21,31 @@ namespace JhaylaPlusAPI.Migrations.UsuariosDb
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("JhaylaPlusAPI.Models.Favorito", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("FechaAgregado")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PeliculaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId", "PeliculaId")
+                        .IsUnique();
+
+                    b.ToTable("Favoritos");
+                });
+
             modelBuilder.Entity("JhaylaPlusAPI.Models.Usuarios", b =>
                 {
                     b.Property<int>("Id")
